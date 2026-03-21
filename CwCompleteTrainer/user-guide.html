@@ -303,44 +303,23 @@
   <section id="web-browsing">
     <h2><span class="num">5</span>CW Web Browsing</h2>
 
-    <!-- Row 1: URL paste -->
+    <!-- Row 1: browser -->
     <div class="cols">
       <div class="content">
         <p>
           Convert any online article to Morse audio in seconds — useful for practising with
           real-world content at your target speed.
         </p>
-        <h3>URL Paste (Home Screen)</h3>
+        <h3>Using the Browser</h3>
         <ol>
-          <li>Tap <strong>CW Web Browsing</strong> from the launcher.</li>
-          <li>Paste or type a URL in the text field and tap <strong>Load</strong>.</li>
-          <li>The app fetches and extracts the article text (tries JSON-LD metadata, heuristic
-              extraction, and AMP fallback automatically).</li>
-          <li>Tap <strong>Convert to Morse</strong> on the article card → playback starts on
-              the Player screen.</li>
-        </ol>
-      </div>
-      <div class="screenshots">
-        <!-- img/09-home-screen.png -->
-        <div class="screenshot">
-    <img class="screenshot" src="img/URL_enter.png" alt="Word Training Screen">
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2: embedded browser + filters -->
-    <div class="cols">
-      <div class="content">
-        <h3>Embedded Browser</h3>
-        <ol>
-          <li>Tap <strong>Open Browser</strong> on the Home screen to open the built-in WebView.</li>
-          <li>Navigate to any page using the URL bar.</li>
+          <li>Tap <strong>CW Web Browsing</strong> from the launcher — the built-in browser opens immediately.</li>
+          <li>Navigate to any page using the URL bar at the top.</li>
           <li>Tap the <strong>Convert</strong> floating button (bottom-right) to extract the
-              current page and start playback.</li>
+              current page and start Morse playback.</li>
         </ol>
         <div class="tip">
-          The home URL that loads when you open the browser is configurable in
-          Settings → Browser Settings. Default: <code class="default">https://edition.cnn.com/</code>
+          The URL that loads when you open the browser is configurable in
+          Settings → Browser Settings. Default: <code class="default">https://arrl.org</code>
         </div>
         <h3>Basic Characters Only</h3>
         <p>
@@ -359,7 +338,7 @@
       <div class="screenshots">
         <!-- img/10-browser.png -->
         <div class="screenshot">
-    <img class="screenshot" src="img/Play_web_site.png" alt="Word Training Screen">
+    <img class="screenshot" src="img/Play_web_site.png" alt="Browser with Convert button">
         </div>
       </div>
     </div>
@@ -604,7 +583,7 @@
           <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
         </thead>
         <tbody>
-          <tr><td>Home URL</td><td><code class="default">https://edition.cnn.com/</code></td><td>The URL that loads automatically when you open the embedded browser.</td></tr>
+          <tr><td>Home URL</td><td><code class="default">https://arrl.org</code></td><td>The URL that loads automatically when you open the embedded browser.</td></tr>
           <tr><td>Basic characters only</td><td><code class="default">on</code></td><td>Filters article text to letters (A–Z), digits (0–9), spaces, periods, commas, and hyphens before encoding. Prevents unknown characters from silently dropping. Disable only if you need full Unicode Morse coverage.</td></tr>
         </tbody>
       </table>
