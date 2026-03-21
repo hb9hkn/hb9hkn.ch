@@ -158,34 +158,38 @@
           <tr><td>Master volume</td><td><code class="default">0.8</code></td><td>Overall playback level (0.0 – 1.0).</td></tr>
           <tr><td>Dah volume</td><td><code class="default">1.0</code></td><td>Relative level of dah elements (0.0 – 1.0).</td></tr>
           <tr><td>Dit volume</td><td><code class="default">1.0</code></td><td>Relative level of dit elements (0.0 – 1.0).</td></tr>
-          <tr><td>QRM (interference)</td><td><code class="default">off</code></td><td>
-            Simulates radio-frequency interference — other CW stations transmitting near your
-            frequency, mixed directly into the audio stream. Drag the slider to select a
-            difficulty level; set to 0 to disable.<br><br>
-            <strong>Difficulty levels:</strong><br>
-            &bull; <em>Beginner</em> — one weak interfering signal, well separated in frequency.<br>
-            &bull; <em>Easy</em> — one moderate interferer, closer in frequency.<br>
-            &bull; <em>Medium</em> — two interferers at varying strengths.<br>
-            &bull; <em>Hard</em> — three interferers, one of them close and strong.<br>
-            &bull; <em>Contest</em> — multiple strong interferers across a narrow band, simulating a contest pile-up.
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">QRM — Radio-frequency Interference</div></td></tr>
+          <tr><td>QRM Volume</td><td><code class="default">off (0%)</code></td><td>Overall volume of all QRM interferers relative to the main signal. Set to 0 to disable QRM entirely. When above 0, the Difficulty and individual subsettings appear below.</td></tr>
+          <tr><td>Difficulty</td><td><code class="default">Medium</code></td><td>
+            Preset that configures Sources, Fading, and Freq drift together as a starting point.
+            Individual sliders let you fine-tune after selecting a difficulty.<br>
+            &bull; <em>Beginner</em> — 1 source, minimal fading, no drift.<br>
+            &bull; <em>Easy</em> — 1 source, light fading, slight drift.<br>
+            &bull; <em>Medium</em> — 2 sources, moderate fading and drift.<br>
+            &bull; <em>Hard</em> — 3 sources, strong fading, noticeable drift.<br>
+            &bull; <em>Contest</em> — 4+ sources, heavy fading, significant drift.
           </td></tr>
-          <tr><td>QRM minimum offset</td><td><code class="default">200 Hz</code></td><td>
-            Sets the minimum frequency separation between any QRM source and the main
-            signal. A larger value keeps interferers further away (easier to hear through);
-            a smaller value places them closer to your frequency (harder to separate).
-            Reduce to 50 – 100 Hz for a demanding contest-style exercise.
+          <tr><td>Min frequency offset</td><td><code class="default">200 Hz</code></td><td>Minimum frequency separation between any QRM source and the main signal. Reduce to 50 – 100 Hz for a contest-style pile-up exercise where interferers are very close in frequency.</td></tr>
+          <tr><td>Sources</td><td><code class="default">1</code></td><td>Number of independent interfering signals playing simultaneously. Range: 1 – 6. More sources simulate a busier band.</td></tr>
+          <tr><td>Fading</td><td><code class="default">30%</code></td><td>Amount of amplitude fading applied to each QRM source. 0% = steady signal; 100% = signal fades in and out strongly, like deep QSB on an interferer. Range: 0 – 100%.</td></tr>
+          <tr><td>Freq drift</td><td><code class="default">1.0 Hz</code></td><td>Maximum slow frequency drift applied to each QRM source over time, simulating an unstable transmitter drifting across your frequency. Range: 0 – 10 Hz.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">QRN — Atmospheric Noise</div></td></tr>
+          <tr><td>QRN Volume</td><td><code class="default">off (0%)</code></td><td>Overall volume of all atmospheric noise layers. Set to 0 to disable QRN entirely. When above 0, the Difficulty and individual subsettings appear below.</td></tr>
+          <tr><td>Difficulty</td><td><code class="default">Medium</code></td><td>
+            Preset that configures all six QRN layers together as a starting point.
+            Individual sliders let you fine-tune after selecting a difficulty.<br>
+            &bull; <em>Beginner</em> — very light background noise, barely noticeable.<br>
+            &bull; <em>Easy</em> — occasional crackles, similar to a quiet 40 m band at night.<br>
+            &bull; <em>Medium</em> — moderate static and sporadic crashes.<br>
+            &bull; <em>Hard</em> — heavy static typical of tropical summer HF conditions.<br>
+            &bull; <em>Storm</em> — severe noise that frequently masks the signal.
           </td></tr>
-          <tr><td>QRN (atmospheric noise)</td><td><code class="default">off</code></td><td>
-            Simulates atmospheric static noise typical of HF propagation — random crackles,
-            pops, and crashes layered under the Morse signal. Drag the slider to select a
-            difficulty level; set to 0 to disable.<br><br>
-            <strong>Difficulty levels:</strong><br>
-            &bull; <em>Beginner</em> — very light background crackle, barely noticeable.<br>
-            &bull; <em>Easy</em> — occasional pops, similar to a quiet band on 40 m at night.<br>
-            &bull; <em>Medium</em> — frequent crackles and short bursts, simulating moderate static.<br>
-            &bull; <em>Hard</em> — heavy static, typical of tropical summer conditions on 20/40 m.<br>
-            &bull; <em>Storm</em> — severe atmospheric noise that frequently masks the signal, simulating a nearby thunderstorm.
-          </td></tr>
+          <tr><td>Base noise</td><td><code class="default">4%</code></td><td>Continuous background white-noise floor — the steady hiss heard even between crackles and crashes. Range: 0 – 50%.</td></tr>
+          <tr><td>Crackle rate</td><td><code class="default">2.0 /s</code></td><td>Number of short crackle bursts per second. A crackle is a brief, sharp transient — higher rates sound like continuous static frying. Range: 0 – 30 /s.</td></tr>
+          <tr><td>Crackle gain</td><td><code class="default">12%</code></td><td>Maximum amplitude of each crackle burst. Low values produce subtle ticks; high values produce loud pops. Range: 0 – 100%.</td></tr>
+          <tr><td>Crash rate</td><td><code class="default">0.10 /s</code></td><td>Number of heavy crash events per second. A crash is a longer, louder burst simulating a nearby lightning discharge. Range: 0 – 5 /s.</td></tr>
+          <tr><td>Crash gain</td><td><code class="default">15%</code></td><td>Maximum amplitude of each crash event. Range: 0 – 100%.</td></tr>
+          <tr><td>Storm activity</td><td><code class="default">10%</code></td><td>Slowly modulates the overall noise density and amplitude over time, simulating the natural ebb and flow of a distant thunderstorm. 0% = steady noise; 100% = pronounced slow swells. Range: 0 – 100%.</td></tr>
         </tbody>
       </table>
     </div>
