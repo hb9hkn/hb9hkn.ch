@@ -168,10 +168,39 @@
       color: var(--muted);
       font-family: monospace;
     }
-    /* When real images are added, replace the div with an img */
-    .screenshot img {
+    /* Real screenshot images — constrained thumbnail, click to zoom */
+    img.screenshot {
       max-width: 100%;
+      max-height: 280px;
+      width: auto;
+      object-fit: contain;
       border-radius: 8px;
+      cursor: zoom-in;
+      display: block;
+      border: 1px solid var(--border);
+      min-height: unset;
+      padding: 0;
+      background: none;
+    }
+
+    /* Lightbox overlay */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 10px;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.8);
+      object-fit: contain;
     }
 
     /* ── Prose ──────────────────────────────────────────── */
@@ -350,7 +379,12 @@
         </div>
       </div>
 
-       <img class="screenshot" src="img/Home.jpg" alt="Launcher screen">
+      <div class="screenshots">
+        <!-- img/01-launcher.png -->
+        <div class="screenshot">
+          <div class="icon">📱</div>
+          <div class="label">[screenshot: launcher screen]</div>
+        </div>
         <!-- img/02-player.png -->
         <div class="screenshot">
           <div class="icon">▶</div>
@@ -892,6 +926,26 @@
 <footer>
   CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.x
 </footer>
+
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('img.screenshot').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+</script>
 
 </body>
 </html>
