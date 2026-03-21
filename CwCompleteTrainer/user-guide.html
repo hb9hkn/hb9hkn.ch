@@ -516,6 +516,26 @@
           The URL that loads when you open the browser is configurable in
           <a href="#settings-browser">Settings → Browser Settings</a>. Default: <code class="default">https://arrl.org</code>
         </div>
+        <h3>Choosing the Right Page</h3>
+        <p>
+          Text extraction quality depends on how the website encodes its content. A few
+          practical guidelines:
+        </p>
+        <ul>
+          <li><strong>Best:</strong> individual news articles, blog posts, Wikipedia articles — pages
+              whose primary purpose is to present a body of text.</li>
+          <li><strong>Poor:</strong> home pages, category pages, search results — pages that are mostly
+              navigation links rather than readable text. The extractor may produce garbled output or
+              very little text at all.</li>
+          <li><strong>Varies:</strong> some publishers use heavy JavaScript rendering or aggressive
+              paywall encoding; the extractor works on the page source it receives and cannot always
+              recover the readable article from these sites.</li>
+        </ul>
+        <div class="tip">
+          When in doubt, navigate into a specific article rather than starting from a news site's
+          front page. <em>arrl.org/news</em>, for example, links to individual articles that extract
+          cleanly, whereas the front page itself contains mostly headlines and menus.
+        </div>
         <h3>Basic Characters Only</h3>
         <p>
           When enabled <code class="default">on by default</code>, the text is filtered to
