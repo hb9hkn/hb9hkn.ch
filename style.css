@@ -60,6 +60,7 @@ nav {
   flex-wrap: wrap;
   gap: 6px 4px;
   align-items: center;
+  justify-content: center;
 }
 nav span { color: var(--muted); font-size: 0.8rem; margin-right: 4px; }
 nav a {
