@@ -158,9 +158,34 @@
           <tr><td>Master volume</td><td><code class="default">0.8</code></td><td>Overall playback level (0.0 – 1.0).</td></tr>
           <tr><td>Dah volume</td><td><code class="default">1.0</code></td><td>Relative level of dah elements (0.0 – 1.0).</td></tr>
           <tr><td>Dit volume</td><td><code class="default">1.0</code></td><td>Relative level of dit elements (0.0 – 1.0).</td></tr>
-          <tr><td>QRM (interference)</td><td><code class="default">off</code></td><td>Simulates radio-frequency interference mixed into the audio — other stations transmitting CW near your frequency. Five difficulty levels from Beginner to Contest. Start at Beginner and increase as your copying improves. Set level above 0 to enable.</td></tr>
-          <tr><td>QRM minimum offset</td><td><code class="default">200 Hz</code></td><td>Minimum frequency separation between QRM sources and the main signal. Reduce for a more challenging contest-style pile-up.</td></tr>
-          <tr><td>QRN (atmospheric noise)</td><td><code class="default">off</code></td><td>Simulates atmospheric static noise (crackles, crashes) typical of HF bands. Five difficulty levels from Beginner (light crackle) to Storm (heavy interference). Set level above 0 to enable.</td></tr>
+          <tr><td>QRM (interference)</td><td><code class="default">off</code></td><td>
+            Simulates radio-frequency interference — other CW stations transmitting near your
+            frequency, mixed directly into the audio stream. Drag the slider to select a
+            difficulty level; set to 0 to disable.<br><br>
+            <strong>Difficulty levels:</strong><br>
+            &bull; <em>Beginner</em> — one weak interfering signal, well separated in frequency.<br>
+            &bull; <em>Easy</em> — one moderate interferer, closer in frequency.<br>
+            &bull; <em>Medium</em> — two interferers at varying strengths.<br>
+            &bull; <em>Hard</em> — three interferers, one of them close and strong.<br>
+            &bull; <em>Contest</em> — multiple strong interferers across a narrow band, simulating a contest pile-up.
+          </td></tr>
+          <tr><td>QRM minimum offset</td><td><code class="default">200 Hz</code></td><td>
+            Sets the minimum frequency separation between any QRM source and the main
+            signal. A larger value keeps interferers further away (easier to hear through);
+            a smaller value places them closer to your frequency (harder to separate).
+            Reduce to 50 – 100 Hz for a demanding contest-style exercise.
+          </td></tr>
+          <tr><td>QRN (atmospheric noise)</td><td><code class="default">off</code></td><td>
+            Simulates atmospheric static noise typical of HF propagation — random crackles,
+            pops, and crashes layered under the Morse signal. Drag the slider to select a
+            difficulty level; set to 0 to disable.<br><br>
+            <strong>Difficulty levels:</strong><br>
+            &bull; <em>Beginner</em> — very light background crackle, barely noticeable.<br>
+            &bull; <em>Easy</em> — occasional pops, similar to a quiet band on 40 m at night.<br>
+            &bull; <em>Medium</em> — frequent crackles and short bursts, simulating moderate static.<br>
+            &bull; <em>Hard</em> — heavy static, typical of tropical summer conditions on 20/40 m.<br>
+            &bull; <em>Storm</em> — severe atmospheric noise that frequently masks the signal, simulating a nearby thunderstorm.
+          </td></tr>
         </tbody>
       </table>
     </div>
@@ -202,7 +227,7 @@
         </thead>
         <tbody>
           <tr><td>QSO type</td><td><code class="default">Realistic QSO</code></td><td><em>Realistic QSO</em>: a natural ragchew with varying exchanges — closer to what you will hear on the air. <em>Training QSO</em>: a structured beginner QSO with fixed, predictable exchanges — easier to follow when starting out.</td></tr>
-          <tr><td>Operator B sidetone offset</td><td><code class="default">1.5%</code></td><td>Frequency difference between Operator A and Operator B. A slight offset (1 – 3%) makes the two operators audibly distinct by ear, just like tuning across a real QSO. Set to 0 for identical tones. Range: 0 – 10%.</td></tr>
+          <tr><td>Operator B sidetone offset</td><td><code class="default">2%</code></td><td>Frequency difference between Operator A and Operator B. A slight offset (1 – 3%) makes the two operators audibly distinct by ear, just like tuning across a real QSO. Set to 0 for identical tones. Range: 0 – 10%.</td></tr>
           <tr><td>Max speed difference</td><td><code class="default">2 WPM</code></td><td>Operator B's speed varies randomly up to ±N WPM from Operator A's speed. Adding a small difference (1 – 3 WPM) makes the exercise feel more like a real on-air exchange. Range: 0 – 10 WPM.</td></tr>
         </tbody>
       </table>
