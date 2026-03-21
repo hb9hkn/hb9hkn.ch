@@ -203,6 +203,14 @@
       object-fit: contain;
     }
 
+    /* ── Column separator ───────────────────────────────── */
+    .col-sep {
+      border: none;
+      border-top: 1px dashed var(--border);
+      margin: 20px 0;
+      opacity: 0.6;
+    }
+
     /* ── Prose ──────────────────────────────────────────── */
     p { margin-bottom: 10px; }
     ul, ol { margin: 8px 0 12px 20px; }
@@ -379,14 +387,18 @@
         </div>
       </div>
 
-
-  <div class="screenshots">
-    <!-- img/01-launcher.png -->
-    <img class="screenshot" src="img/Home.png" alt="Launcher screen">
-    <!-- img/02-player.png -->
-    <img class="screenshot" src="img/player_controls.png" alt="Player screen with controls">
-  </div>
-
+      <div class="screenshots">
+        <!-- img/01-launcher.png -->
+        <div class="screenshot">
+          <div class="icon">📱</div>
+          <div class="label">[screenshot: launcher screen]</div>
+        </div>
+        <!-- img/02-player.png -->
+        <div class="screenshot">
+          <div class="icon">▶</div>
+          <div class="label">[screenshot: player screen with controls]</div>
+        </div>
+      </div>
     </div>
   </section>
 
