@@ -3,16 +3,365 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home of HB9HKN</title>
+  <title>HB9HKN — Home of Marco Sustic</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Callsign hero ──────────────────────────────────── */
+    .callsign-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px;
+      margin: 32px 0 16px;
+    }
+    .callsign-badge {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #fff;
+      background: var(--bg-deep);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 12px 28px;
+      white-space: nowrap;
+    }
+    .callsign-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .callsign-meta .meta-row {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .callsign-meta .meta-row strong { color: var(--text); }
+
+    /* ── Stat chips ─────────────────────────────────────── */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .chip.accent {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Award list ─────────────────────────────────────── */
+    .award-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .award-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(74,80,128,0.4);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .award-list li:last-child { border-bottom: none; }
+    .award-list .award-num {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-family: monospace;
+      white-space: nowrap;
+    }
+
+    /* ── Equipment table tweaks ─────────────────────────── */
+    .eq-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    /* ── App card ───────────────────────────────────────── */
+    .app-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .app-card h3 { margin: 0; }
+    .app-card .app-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 7px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; color: inherit; }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--link);
+    }
+  </style>
 </head>
 <body>
-  <body>
+
 <header>
-  <h1>Welcome to home of HB9HKN</h1>
+  <h1>HB9HKN</h1>
+  <div class="sub">Amateur Radio &nbsp;·&nbsp; Switzerland &nbsp;·&nbsp; CW Operator</div>
 </header>
 
-      <h2>Privacy Policy</h2>
-      <p>[Paste your privacy policy text]</p>
-  </body>
-  </html>
+<nav>
+  <span>Jump to:</span>
+  <a href="#about">About</a>
+  <a href="#operating">Operating</a>
+  <a href="#equipment">Equipment</a>
+  <a href="#awards">Awards</a>
+  <a href="#app">CW Trainer App</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════ About -->
+  <section id="about">
+    <div class="callsign-hero">
+      <div class="callsign-badge">HB9HKN</div>
+      <div class="callsign-meta">
+        <div class="meta-row"><strong>Also known as:</strong> S50TT</div>
+        <div class="meta-row"><strong>Location:</strong> Switzerland &nbsp;·&nbsp; Grid JN47</div>
+        <div class="meta-row"><strong>Licensed since:</strong> 1982 (returned to the hobby after a 30-year break)</div>
+        <div class="meta-row"><strong>Member:</strong> CW Ops</div>
+      </div>
+    </div>
+
+    <div class="chips">
+      <div class="chip accent">CW 95%</div>
+      <div class="chip">~20 WPM</div>
+      <div class="chip">10 – 40 m</div>
+      <div class="chip">Occasional SSB</div>
+      <div class="chip">JN47</div>
+      <div class="chip">LoTW &amp; QRZ</div>
+    </div>
+
+    <p>
+      HB9HKN is a Swiss amateur radio operator with a passion for CW (Morse code). Licensed
+      in 1982, a long career break was followed by a return to the hobby, bringing fresh
+      enthusiasm for operating portable from mountains and parks. Approximately 95% of
+      on-air time is spent on CW across the 10 – 40 metre bands.
+    </p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ Operating -->
+  <section id="operating">
+    <h2>Operating Style</h2>
+
+    <div class="cols">
+      <div class="content">
+        <h3>Modes &amp; Bands</h3>
+        <ul>
+          <li>CW — approximately <strong>95%</strong> of all operating time</li>
+          <li>Typical speed: <strong>~20 WPM</strong></li>
+          <li>Bands: <strong>10, 15, 20, 30, 40 m</strong></li>
+          <li>Occasional SSB for special events or contests</li>
+        </ul>
+
+        <h3>QSL Policy</h3>
+        <p>
+          Preferred confirmation via <strong>LoTW</strong> and <strong>QRZ.com logbook</strong>.
+          Paper QSL is possible via bureau for exchanges that include name, QTH, and rig details.
+        </p>
+        <div class="tip">
+          PLS CFM VIA LOTW &amp; QRZ.com / Buro possible
+        </div>
+      </div>
+      <div class="screenshots">
+        <div class="card" style="min-height: 160px; display:flex; align-items:center; justify-content:center; text-align:center;">
+          <div>
+            <div style="font-size:2.5rem; margin-bottom:8px;">📡</div>
+            <div style="color:var(--muted); font-size:0.85rem;">HB9HKN — JN47<br>Switzerland</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ Equipment -->
+  <section id="equipment">
+    <h2>Equipment</h2>
+
+    <div class="cols">
+      <div class="content">
+        <h3>Portable Setup</h3>
+        <p>Total packed weight: <strong>2.1 kg</strong> (under 2 kg without mic/headphones) — optimised for SOTA and POTA activations.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Item</th><th>Details</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="eq-label">Transceiver</td><td>Yaesu KX2 with internal ATU</td></tr>
+              <tr><td class="eq-label">Battery</td><td>LiFePO₄ 4S1P 3 Ah</td></tr>
+              <tr><td class="eq-label">Antenna</td><td>Custom switchable coil (40 m / 30 m) + telescopic whip</td></tr>
+              <tr><td class="eq-label">Feedline</td><td>Lightweight coax with mounting bracket</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+          <div class="icon">🎒</div>
+          <div class="label">[photo: portable setup]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="content">
+        <h3>Base Station</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Item</th><th>Details</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="eq-label">Transceiver</td><td>Yaesu FTDX10</td></tr>
+              <tr><td class="eq-label">Antenna</td><td>MFJ 1788 magnetic loop (balcony-mounted)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+          <div class="icon">🏠</div>
+          <div class="label">[photo: base station]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ Awards -->
+  <section id="awards">
+    <h2>Awards &amp; Achievements</h2>
+
+    <ul class="award-list">
+      <li>
+        🏅 Grid Squared Award
+        <span class="award-num">#78319 · 2025</span>
+      </li>
+      <li>
+        🏅 Master of Radio Communication — Europe
+        <span class="award-num">#51493 · 2025</span>
+      </li>
+      <li>
+        🏅 World Continents Award
+        <span class="award-num">#65796 · 2024 · 15 m endorsement</span>
+      </li>
+      <li>
+        🏅 World Radio Friendship Award
+        <span class="award-num">#75776 · 2024 · 30 m endorsement</span>
+      </li>
+      <li>
+        🏅 30 Years of QRZ
+        <span class="award-num">#44646 · 2024</span>
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ App -->
+  <section id="app">
+    <h2>CW Complete Trainer App</h2>
+
+    <div class="cols">
+      <div class="content">
+        <div class="app-card">
+          <h3>CW Complete Trainer</h3>
+          <p>
+            A free Android app for learning and practising Morse code — built by HB9HKN.
+            Covers everything from individual characters (Koch method) through words, sentences,
+            QSO simulations, and live web article conversion.
+          </p>
+          <ul>
+            <li>Koch method character training (40 characters, LCWO order)</li>
+            <li>Common words, HAM abbreviations, and callsign training</li>
+            <li>Realistic QSO, SOTA, and POTA simulations</li>
+            <li>Four Quick Game modes with Speed Ladder</li>
+            <li>QRM / QRN interference simulation</li>
+            <li>Text-to-Speech confirmation overlay</li>
+            <li>CW web browsing — convert any article to Morse audio</li>
+          </ul>
+          <div class="app-links">
+            <a class="btn btn-primary" href="user-guide.html">User Guide</a>
+            <a class="btn btn-outline" href="privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+          <div class="icon">📱</div>
+          <div class="label">[screenshot: app launcher screen]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <div class="cols">
+      <div class="content">
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td class="eq-label">Callsign</td><td><strong>HB9HKN</strong> (also S50TT)</td></tr>
+              <tr><td class="eq-label">QRZ page</td><td><a href="https://www.qrz.com/db/HB9HKN" target="_blank">qrz.com/db/HB9HKN</a></td></tr>
+              <tr><td class="eq-label">LoTW</td><td>Active — preferred QSL method</td></tr>
+              <tr><td class="eq-label">Email</td><td><code>ms2070ca (AT) yahoo.com</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="screenshots">
+        <div class="card" style="min-height:120px; display:flex; align-items:center; justify-content:center; text-align:center;">
+          <div style="color:var(--muted); font-size:0.9rem; line-height:2;">
+            73 de HB9HKN<br>
+            <span style="font-size:1.4rem; letter-spacing:4px; color:var(--accent);">··· ···</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  HB9HKN &nbsp;·&nbsp; Marco Sustic &nbsp;·&nbsp; Switzerland &nbsp;·&nbsp; JN47
+</footer>
+
+</body>
+</html>
