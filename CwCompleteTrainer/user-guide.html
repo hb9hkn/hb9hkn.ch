@@ -1,1 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CW Complete Trainer — User Guide</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:        #20254E;
+      --bg-card:   #272c5a;
+      --bg-deep:   #161a38;
+      --accent:    #7b8cde;
+      --text:      #e0e4ff;
+      --muted:     #8890bb;
+      --link:      #a0b0ff;
+      --default:   #f0c040;
+      --border:    #4a5080;
+      --green:     #5ecf8a;
+      --amber:     #f0c040;
+      --red:       #e07070;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: var(--link); }
+    a:hover { color: var(--accent); }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      background: var(--bg-deep);
+      border-bottom: 2px solid var(--border);
+      padding: 28px 40px 24px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 200;
+      letter-spacing: 4px;
+      color: #fff;
+    }
+    header .sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+      margin-top: 6px;
+    }
+
+    /* ── Sticky nav ─────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 4px;
+      align-items: center;
+    }
+    nav span { color: var(--muted); font-size: 0.8rem; margin-right: 4px; }
+    nav a {
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--link);
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    nav a:hover { background: var(--bg-card); color: var(--accent); }
+
+    /* ── Main layout ────────────────────────────────────── */
+    main { max-width: 1200px; margin: 0 auto; padding: 40px 40px 80px; }
+
+    section {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+
+    /* Two-column grid: instructions | screenshot */
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 32px;
+      align-items: start;
+      margin-top: 20px;
+    }
+    .cols.wide { grid-template-columns: 1fr 380px; }
+
+    /* Stack screenshots under text on narrow screens */
+    @media (max-width: 860px) {
+      .cols, .cols.wide { grid-template-columns: 1fr; }
+      nav { padding: 8px 16px; }
+      main { padding: 24px 16px 60px; }
+      header { padding: 20px 16px; }
+      header h1 { font-size: 1.4rem; letter-spacing: 2px; }
+    }
+
+    /* ── Headings ───────────────────────────────────────── */
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      padding-top: 8px;
+    }
+    h2 .num {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg-deep);
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 50%;
+      width: 26px; height: 26px;
+      line-height: 26px;
+      text-align: center;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #c0caff;
+      margin: 20px 0 8px;
+    }
+    h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 16px 0 6px;
+    }
+
+    /* ── Screenshot placeholder ─────────────────────────── */
+    .screenshots { display: flex; flex-direction: column; gap: 16px; }
+    .screenshot {
+      background: var(--bg-deep);
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .screenshot .icon { font-size: 2rem; opacity: 0.25; }
+    .screenshot .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: monospace;
+    }
+    /* When real images are added, replace the div with an img */
+    .screenshot img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    /* ── Prose ──────────────────────────────────────────── */
+    p { margin-bottom: 10px; }
+    ul, ol { margin: 8px 0 12px 20px; }
+    li { margin-bottom: 4px; }
+
+    code.default {
+      background: rgba(240,192,64,0.15);
+      color: var(--default);
+      border: 1px solid rgba(240,192,64,0.3);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.82em;
+      font-family: monospace;
+      white-space: nowrap;
+    }
+    code {
+      background: rgba(123,140,222,0.15);
+      color: #c0caff;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-size: 0.85em;
+    }
+
+    /* ── Cards / info boxes ─────────────────────────────── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 12px 0;
+    }
+    .note {
+      background: rgba(123,140,222,0.1);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+      color: #c0caff;
+    }
+    .tip {
+      background: rgba(94,207,138,0.08);
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+      color: #c0d8c8;
+    }
+
+    /* ── Tables ─────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin: 12px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th {
+      background: var(--bg-deep);
+      color: var(--accent);
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--border);
+    }
+    td {
+      padding: 7px 12px;
+      border-bottom: 1px solid rgba(74,80,128,0.5);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── Game cards ─────────────────────────────────────── */
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .game-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .game-card .game-title {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .game-card .game-stat {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .game-card .game-stat span { color: var(--text); }
+
+    /* ── Footer ─────────────────────────────────────────── */
+    footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CW Complete Trainer</h1>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN</div>
+</header>
+
+<nav>
+  <span>Jump to:</span>
+  <a href="#getting-started">Getting Started</a>
+  <a href="#character-training">Character Training</a>
+  <a href="#word-training">Word Training</a>
+  <a href="#text-qso">Text &amp; QSO Training</a>
+  <a href="#web-browsing">CW Web Browsing</a>
+  <a href="#quick-games">Quick Games</a>
+  <a href="#settings">Settings</a>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════════════ 1. Getting Started -->
+  <section id="getting-started">
+    <h2><span class="num">1</span>Getting Started</h2>
+
+    <div class="cols">
+      <div class="content">
+        <p>
+          <strong>CW Complete Trainer</strong> is an Android app for learning and practising
+          Morse code (CW). It covers the full learning path from individual characters through
+          words, sentences, QSO simulations, and live web articles.
+        </p>
+
+        <h3>The Launch Screen</h3>
+        <p>When you open the app you see four training tiles and a Settings button:</p>
+        <ul>
+          <li><strong>Character Training</strong> — Koch method, one character at a time</li>
+          <li><strong>Word Training</strong> — common words, HAM abbreviations, callsigns</li>
+          <li><strong>Text &amp; QSO Training</strong> — sentences, stories, full QSO simulations</li>
+          <li><strong>CW Web Browsing</strong> — convert any web article to Morse audio</li>
+        </ul>
+        <p>Tap a tile to enter that training mode. Use the <strong>Settings</strong> button
+        at the bottom to configure speed, audio, TTS, and more.</p>
+
+        <h3>Phone Permission</h3>
+        <p>On first launch the app asks permission to read the phone state. This is used
+        to <strong>automatically pause playback when you receive a call</strong>. You can
+        allow or skip this; training works either way.</p>
+
+        <h3>Playback Controls</h3>
+        <p>All training modes share the same playback controls:</p>
+        <ul>
+          <li><strong>Play / Resume</strong> — start or continue</li>
+          <li><strong>Pause</strong> — suspend (tap Resume to continue)</li>
+          <li><strong>−10 s</strong> — rewind ten seconds</li>
+          <li><strong>Stop</strong> — stop and return to idle</li>
+          <li><strong>Play Again</strong> — repeat from the beginning</li>
+        </ul>
+
+        <div class="tip">
+          The WPM slider appears directly on the player screen by default
+          <code class="default">on</code>. You can hide it in
+          Settings → General and use the tappable speed badge instead.
+        </div>
+      </div>
+
+      <div class="screenshots">
+        <!-- img/01-launcher.png -->
+        <div class="screenshot">
+          <div class="icon">📱</div>
+          <div class="label">[screenshot: launcher screen]</div>
+        </div>
+        <!-- img/02-player.png -->
+        <div class="screenshot">
+          <div class="icon">▶</div>
+          <div class="label">[screenshot: player screen with controls]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 2. Character Training -->
+  <section id="character-training">
+    <h2><span class="num">2</span>Character Training</h2>
+
+    <div class="cols">
+      <div class="content">
+        <p>
+          Character Training uses the <strong>Koch method</strong> — the same ordering used
+          by <em>LCWO.net</em>. You start with just two characters (K and M) and add one new
+          character at a time as your confidence grows. All 40 CW characters are covered.
+        </p>
+
+        <h3>Selecting Your Level</h3>
+        <p>
+          The character set panel shows all 40 characters as chips. Characters at or below
+          your current level are unlocked (filled, tappable); the next character is highlighted;
+          characters above your level are greyed out.
+        </p>
+        <ul>
+          <li><strong>Tap any chip</strong> to jump directly to that level.</li>
+          <li>The current level is saved and restored when you reopen the app.</li>
+          <li>Default level: <code class="default">2 (K, M)</code></li>
+          <li>Level range: 2 – 40</li>
+        </ul>
+
+        <h3>Playing an Exercise</h3>
+        <p>
+          Tap <strong>Play</strong> to generate a fresh exercise: 50 groups of 5 randomly
+          chosen characters from your current level, transmitted at your configured speed.
+          A VVV opening and --- closing marker are added automatically.
+        </p>
+
+        <div class="note">
+          The recommended approach: stay at a level until you can copy at least 90% of
+          characters comfortably, then tap the next chip to advance.
+        </div>
+
+        <h3>Text-to-Speech (TTS)</h3>
+        <p>
+          When TTS is enabled (Settings → Text-to-Speech), each character is
+          <em>spoken aloud</em> after its Morse plays, giving you immediate confirmation.
+          Two modes are available:
+        </p>
+        <ul>
+          <li><strong>Normal</strong> <code class="default">default</code> — letter name spoken naturally ("Kay", "Mike", …)</li>
+          <li><strong>NATO/ICAO</strong> — phonetic alphabet ("Kilo", "Mike", "Romeo", …)</li>
+        </ul>
+        <p>Configure TTS delays and volume in Settings → Text-to-Speech.</p>
+
+        <h3>Quick Game</h3>
+        <p>
+          Tap <strong>Quick Game</strong> to enter the <a href="#char-game">Character Match</a>
+          game — a timed single-character recognition quiz using your current Koch level.
+        </p>
+      </div>
+
+      <div class="screenshots">
+        <!-- img/03-character-training.png -->
+        <div class="screenshot">
+          <div class="icon">🔡</div>
+          <div class="label">[screenshot: character training screen]</div>
+        </div>
+        <!-- img/04-character-chips.png -->
+        <div class="screenshot">
+          <div class="icon">🟦</div>
+          <div class="label">[screenshot: Koch level chips]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 3. Word Training -->
+  <section id="word-training">
+    <h2><span class="num">3</span>Word Training</h2>
+
+    <div class="cols">
+      <div class="content">
+
+        <h3>Common Words</h3>
+        <p>
+          Select a maximum word length using the chips (3 – 13 characters). The app loads
+          all English words up to that length, shuffles them, and plays each word N times
+          before moving on.
+        </p>
+        <ul>
+          <li>Default max length: <code class="default">5 characters</code></li>
+          <li>Default repeat count: <code class="default">1×</code> (configurable 1 – 3 in Settings → General)</li>
+          <li>Words are reshuffled each time you tap Play.</li>
+        </ul>
+        <p>Tap <strong>Play</strong> to start, or <strong>Quick Game</strong> for a timed word-recognition quiz.</p>
+
+        <h3>HAM Abbreviations</h3>
+        <p>
+          A curated list of standard CW abbreviations used on the air: QRM, QRN, QSO, CQ,
+          DE, 73, 88, RST reports, and more.
+        </p>
+        <ul>
+          <li>TTS spells each abbreviation letter by letter (e.g., "Q – R – M").</li>
+          <li>Repeat count setting applies here too.</li>
+        </ul>
+
+        <h3>Call Signs</h3>
+        <p>
+          Bundled callsign lists, normalised and validated (no portable /AM, /MM suffixes).
+          Ideal for practising the most common on-air element.
+        </p>
+        <ul>
+          <li>TTS spells each callsign character by character.</li>
+          <li>Quick Game mode available for timed callsign recognition.</li>
+        </ul>
+
+        <h3>From File</h3>
+        <p>
+          Tap the <strong>file upload button</strong> to pick a <code>.txt</code> file from
+          your device's Downloads folder. The file content is played as a word or text list.
+          This is useful for custom vocabulary lists or your own training material.
+        </p>
+
+      </div>
+
+      <div class="screenshots">
+        <!-- img/05-word-training.png -->
+        <div class="screenshot">
+          <div class="icon">📝</div>
+          <div class="label">[screenshot: word training screen]</div>
+        </div>
+        <!-- img/06-word-training-chips.png -->
+        <div class="screenshot">
+          <div class="icon">🔢</div>
+          <div class="label">[screenshot: word length chips]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 4. Text & QSO Training -->
+  <section id="text-qso">
+    <h2><span class="num">4</span>Text &amp; QSO Training</h2>
+
+    <div class="cols wide">
+      <div class="content">
+
+        <h3>English Sentences</h3>
+        <p>
+          Choose a maximum sentence length (3 – 10 words) with the chips. Sentences are
+          shuffled and played continuously as a single exercise, subject to your exercise
+          length settings.
+        </p>
+        <ul>
+          <li>Default max words: <code class="default">5 words</code></li>
+          <li>Tap <strong>Quick Game</strong> for the <a href="#phrase-game">Phrase Error Spotter</a> game.</li>
+        </ul>
+
+        <h3>From File</h3>
+        <p>
+          Same file picker as Word Training — upload any <code>.txt</code> file and play it
+          as a full text exercise.
+        </p>
+
+        <h3>QSO Simulations</h3>
+        <p>
+          The app generates realistic two-operator QSO conversations. Three variants are
+          available:
+        </p>
+        <ul>
+          <li><strong>Play QSO</strong> — standard ragchew or structured training QSO</li>
+          <li><strong>Play SOTA</strong> — Summits on the Air activation QSO with real SOTA references</li>
+          <li><strong>Play POTA</strong> — Parks on the Air activation QSO with real POTA references</li>
+        </ul>
+
+        <h4>During QSO Playback</h4>
+        <ul>
+          <li>The transcript is revealed <strong>line by line</strong> as each exchange plays.</li>
+          <li><strong>Operator A</strong> lines appear in blue; <strong>Operator B</strong> lines in amber.</li>
+          <li>The two operators transmit on slightly different frequencies
+              (offset: <code class="default">1.5%</code>) — making them easier to distinguish by ear.</li>
+          <li>Text display mode (full at start / chars as played / full at end) applies here.</li>
+        </ul>
+
+        <h4>Controls During QSO</h4>
+        <ul>
+          <li><strong>Play Again</strong> — replay the same QSO from the beginning</li>
+          <li><strong>Play Another QSO</strong> — generate and play a brand-new QSO</li>
+        </ul>
+
+        <h3>QSO Games</h3>
+        <ul>
+          <li><strong>QSO Game</strong> — listen to a full QSO, then answer multiple-choice questions about what was exchanged</li>
+          <li><strong>SOTA/POTA Game</strong> — same format but with mixed SOTA and POTA activations</li>
+        </ul>
+        <p>See <a href="#quick-games">Quick Games</a> for full details on scoring and mechanics.</p>
+
+      </div>
+
+      <div class="screenshots">
+        <!-- img/07-text-training.png -->
+        <div class="screenshot">
+          <div class="icon">📄</div>
+          <div class="label">[screenshot: text training screen]</div>
+        </div>
+        <!-- img/08-qso-transcript.png -->
+        <div class="screenshot">
+          <div class="icon">🎙</div>
+          <div class="label">[screenshot: QSO transcript — two-operator colours]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 5. CW Web Browsing -->
+  <section id="web-browsing">
+    <h2><span class="num">5</span>CW Web Browsing</h2>
+
+    <div class="cols">
+      <div class="content">
+        <p>
+          Convert any online article to Morse audio in seconds — useful for practising with
+          real-world content at your target speed.
+        </p>
+
+        <h3>URL Paste (Home Screen)</h3>
+        <ol>
+          <li>Tap <strong>CW Web Browsing</strong> from the launcher.</li>
+          <li>Paste or type a URL in the text field and tap <strong>Load</strong>.</li>
+          <li>The app fetches and extracts the article text (tries JSON-LD metadata, heuristic
+              extraction, and AMP fallback automatically).</li>
+          <li>Tap <strong>Convert to Morse</strong> on the article card → playback starts on
+              the Player screen.</li>
+        </ol>
+
+        <h3>Embedded Browser</h3>
+        <ol>
+          <li>Tap <strong>Open Browser</strong> on the Home screen to open the built-in WebView.</li>
+          <li>Navigate to any page using the URL bar.</li>
+          <li>Tap the <strong>Convert</strong> floating button (bottom-right) to extract the
+              current page and start playback.</li>
+        </ol>
+
+        <div class="tip">
+          The home URL that loads when you open the browser is configurable in
+          Settings → Browser Settings. Default: <code class="default">https://edition.cnn.com/</code>
+        </div>
+
+        <h3>Basic Characters Only</h3>
+        <p>
+          When enabled <code class="default">on by default</code>, the text is filtered to
+          letters, digits, spaces, periods, commas, and hyphens before encoding. This
+          removes symbols, emoji, and special characters that don't have Morse equivalents.
+          Disable in Settings → Browser Settings if you want full character coverage
+          (requires the characters to be in the Morse table).
+        </p>
+
+        <h3>Exercise Length</h3>
+        <p>
+          Long articles are automatically truncated according to your exercise length setting
+          (Settings → General). Default: <code class="default">5 minutes</code>. Set to
+          <em>Unlimited</em> to play the full article.
+        </p>
+
+      </div>
+
+      <div class="screenshots">
+        <!-- img/09-home-screen.png -->
+        <div class="screenshot">
+          <div class="icon">🌐</div>
+          <div class="label">[screenshot: home screen — URL input]</div>
+        </div>
+        <!-- img/10-browser.png -->
+        <div class="screenshot">
+          <div class="icon">🔗</div>
+          <div class="label">[screenshot: embedded browser with Convert button]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 6. Quick Games -->
+  <section id="quick-games">
+    <h2><span class="num">6</span>Quick Games</h2>
+
+    <div class="cols">
+      <div class="content">
+        <p>
+          Every training mode has a <strong>Quick Game</strong> button that launches a timed
+          listening quiz. Games are designed for short, focused sessions of 5 – 10 minutes.
+        </p>
+
+        <div class="game-grid">
+          <div class="game-card" id="char-game">
+            <div class="game-title">Character Match</div>
+            <div class="game-stat">From: <span>Character Training</span></div>
+            <div class="game-stat">Timer: <span>4 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Characters at current Koch level</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">Word / Callsign Match</div>
+            <div class="game-stat">From: <span>Word Training</span></div>
+            <div class="game-stat">Timer: <span>6 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Words (filtered by length) or callsigns</span></div>
+          </div>
+          <div class="game-card" id="phrase-game">
+            <div class="game-title">Phrase Error Spotter</div>
+            <div class="game-stat">From: <span>Text Training</span></div>
+            <div class="game-stat">Timer: <span>10 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Sentences up to selected word count</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">QSO Quiz</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>Generated QSO (standard / SOTA / POTA)</span></div>
+          </div>
+        </div>
+
+        <h3>How Character / Word / Phrase Games Work</h3>
+        <ol>
+          <li>A character, word, or sentence plays in Morse.</li>
+          <li>The screen shows either the <em>same</em> item or a different one (foil).</li>
+          <li>Tap <strong>✓ Correct</strong> or <strong>✗ Wrong</strong> — or wait for the
+              timer to expire (counts as wrong).</li>
+          <li>Feedback flashes green or red for 1 – 3 seconds, then the next item plays.</li>
+          <li>Three wrong answers ends the game.</li>
+        </ol>
+
+        <div class="note">
+          For the <strong>Phrase Error Spotter</strong>, the audio <em>always</em> plays the
+          correct sentence. The text on screen may show a version with one word secretly
+          replaced. Your task is to judge whether what you <em>hear</em> matches what you
+          <em>see</em>.
+        </div>
+
+        <h3>How the QSO Quiz Works</h3>
+        <ol>
+          <li><strong>Listening phase:</strong> a complete two-operator QSO plays. Scroll
+              through the transcript as it is revealed line by line.</li>
+          <li><strong>Quiz phase:</strong> 4 – 10 multiple-choice questions are asked about
+              facts from the QSO (callsigns, RST reports, name, QTH, etc.).</li>
+          <li>Each question has a 15-second timer. Answer before it runs out.</li>
+          <li><strong>Review phase:</strong> your score, per-question breakdown, and the full
+              QSO transcript are shown.</li>
+        </ol>
+        <p>The QSO Quiz adapts its WPM during the session: +0.5 WPM if accuracy &gt; 75%,
+        −0.5 WPM if accuracy &lt; 50%, clamped between 5 and 40 WPM.</p>
+
+        <h3>Speed Ladder</h3>
+        <p>
+          Available in Character, Word, and Phrase games. Toggle with the <strong>⚡</strong>
+          icon in the top bar. Default: <code class="default">ON</code>.
+        </p>
+        <ul>
+          <li><strong>+0.2 WPM</strong> per correct answer</li>
+          <li><strong>−0.1 WPM</strong> per wrong answer</li>
+          <li>WPM clamped between 5 and 60</li>
+          <li>Resets to your settings WPM when toggled on or when a new game starts</li>
+        </ul>
+        <p>When Speed Ladder is active the score strip shows your current ladder speed (⚡ N.N WPM) instead of the best-streak counter.</p>
+
+        <h3>Scoring</h3>
+        <div class="card">
+          <p style="font-family: monospace; font-size: 0.95rem; color: var(--accent);">
+            score = correct × 100 × (wpm / 20) × (1 + timeRemaining × 0.5)
+          </p>
+          <p style="margin-top: 8px; font-size: 0.88rem; color: var(--muted);">
+            <em>timeRemaining</em> = fraction of the timer left when you answered (0.0 – 1.0).<br>
+            Faster answers and higher WPM produce higher scores.
+          </p>
+        </div>
+
+        <h3>Score History</h3>
+        <p>
+          Your last 50 games per game type are stored. A chart and your last 5 games are
+          shown on the game-over screen. Access the full history from the game-over screen.
+        </p>
+
+      </div>
+
+      <div class="screenshots">
+        <!-- img/11-character-game.png -->
+        <div class="screenshot">
+          <div class="icon">🎮</div>
+          <div class="label">[screenshot: character game — timer bar + answer buttons]</div>
+        </div>
+        <!-- img/12-game-over.png -->
+        <div class="screenshot">
+          <div class="icon">📊</div>
+          <div class="label">[screenshot: game-over screen with score chart]</div>
+        </div>
+        <!-- img/13-qso-game-quiz.png -->
+        <div class="screenshot">
+          <div class="icon">❓</div>
+          <div class="label">[screenshot: QSO quiz — multiple-choice question]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 7. Settings -->
+  <section id="settings">
+    <h2><span class="num">7</span>Settings</h2>
+
+    <p>
+      Open Settings from the launcher screen. Five sub-sections cover all configurable
+      parameters. All changes take effect immediately and are saved automatically.
+    </p>
+    <p>
+      <strong>Factory Reset</strong> (at the bottom of Settings → General) restores every
+      setting to its default value without affecting your onboarding status or score history.
+    </p>
+
+    <!-- 7.1 General -->
+    <h3 id="settings-general">7.1 General</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
+          <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>When set, characters play at the full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Must be lower than WPM. Leave blank to disable.</td></tr>
+          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Displays a live WPM slider on the player screen. When off, a tappable speed badge is shown instead (tap → Settings).</td></tr>
+          <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
+          <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
+          <tr><td>Auto Speed — WPM step</td><td><code class="default">0.02</code></td><td>Fractional WPM added at each threshold crossing. Multiplied by the number of crossings if multiple thresholds pass at once.</td></tr>
+          <tr><td>Start pause</td><td><code class="default">0 ms</code></td><td>Silence inserted before the first Morse symbol. Useful to prepare before copying starts.</td></tr>
+          <tr><td>Dash-to-dot ratio</td><td><code class="default">3.0</code></td><td>Duration of a dah relative to a dit. Standard Morse = 3.0. Increase for a more characteristic fist.</td></tr>
+          <tr><td>Char spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the inter-character gap (normally 3 dits). Values above 1.0 add extra space between characters.</td></tr>
+          <tr><td>Word spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the word gap (normally 7 dits). Values above 1.0 add extra pause between words.</td></tr>
+          <tr><td>Exercise length mode</td><td><code class="default">By minutes</code></td><td>Unlimited: play everything. By minutes: truncate at N×WPM×5 characters. By char count: truncate after N characters.</td></tr>
+          <tr><td>Exercise length value</td><td><code class="default">5</code></td><td>Minutes or character count used when exercise length mode is not Unlimited.</td></tr>
+          <tr><td>Text display mode</td><td><code class="default">Chars as played</code></td><td><em>Full at start</em>: show all text immediately. <em>Chars as played</em>: reveal progressively. <em>Full at end</em>: show only after playback finishes.</td></tr>
+          <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
+          <tr><td>Keep screen on</td><td><code class="default">off</code></td><td>Prevents the device screen from dimming or locking during playback.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.2 Audio -->
+    <h3 id="settings-audio">7.2 Audio</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sidetone frequency</td><td><code class="default">700 Hz</code></td><td>Carrier frequency of the Morse tone. Range: 450 – 1000 Hz. 700 Hz is the standard contest sidetone.</td></tr>
+          <tr><td>Dit pitch offset</td><td><code class="default">0% (off)</code></td><td>Pitch difference between dit and dah. Negative = dit lower than dah; positive = dit higher. Range: ±10%. Useful for emulating a real key feel.</td></tr>
+          <tr><td>Attack time</td><td><code class="default">5 ms</code></td><td>Tone fade-in duration. Longer = softer clicks; shorter = sharper keying. Range: 0 – 20 ms.</td></tr>
+          <tr><td>Release time</td><td><code class="default">5 ms</code></td><td>Tone fade-out duration. Range: 0 – 50 ms.</td></tr>
+          <tr><td>Master volume</td><td><code class="default">0.8</code></td><td>Overall playback level (0.0 – 1.0).</td></tr>
+          <tr><td>Dah volume</td><td><code class="default">1.0</code></td><td>Relative level of dah elements (0.0 – 1.0).</td></tr>
+          <tr><td>Dit volume</td><td><code class="default">1.0</code></td><td>Relative level of dit elements (0.0 – 1.0).</td></tr>
+          <tr><td>QRM (interference)</td><td><code class="default">off</code></td><td>Simulates radio-frequency interference mixed into the audio. Five difficulty levels: Beginner, Easy, Medium, Hard, Contest. Set level above 0 to enable.</td></tr>
+          <tr><td>QRM minimum offset</td><td><code class="default">200 Hz</code></td><td>Minimum frequency separation between QRM sources and the main signal.</td></tr>
+          <tr><td>QRN (atmospheric noise)</td><td><code class="default">off</code></td><td>Simulates atmospheric static noise (crackles, crashes). Five difficulty levels. Set level above 0 to enable.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.3 Text-to-Speech -->
+    <h3 id="settings-tts">7.3 Text-to-Speech</h3>
+    <p>
+      When TTS is enabled, the app speaks each training item aloud after its Morse audio
+      drains. This confirms what you heard and reinforces the association between sound and
+      meaning. TTS works in Character, Word, and Text training modes.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Enable TTS</td><td><code class="default">on</code></td><td>Master switch. When on, training modes use the Morse → pause → speak cycle instead of direct playback.</td></tr>
+          <tr><td>Pronunciation mode</td><td><code class="default">Normal</code></td><td><em>Normal</em>: letter names and natural speech ("Kay", "the cat sat"). <em>NATO/ICAO</em>: phonetic alphabet for individual characters ("Kilo", "Tango").</td></tr>
+          <tr><td>TTS volume</td><td><code class="default">1.0</code></td><td>Volume of the spoken output relative to the system TTS engine level.</td></tr>
+          <tr><td>Pre-delay</td><td><code class="default">500 ms</code></td><td>Silence between the end of Morse audio and the start of speech. Gives time to recall before confirmation.</td></tr>
+          <tr><td>Post-delay</td><td><code class="default">500 ms</code></td><td>Silence after speech, before the next item begins.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.4 QSO Simulations -->
+    <h3 id="settings-qso">7.4 QSO Simulations</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>QSO type</td><td><code class="default">Realistic QSO</code></td><td><em>Realistic QSO</em>: a natural ragchew with varying exchanges. <em>Training QSO</em>: a structured beginner QSO with fixed, predictable exchanges — easier to follow when starting out.</td></tr>
+          <tr><td>Operator B sidetone offset</td><td><code class="default">1.5%</code></td><td>Frequency difference between Operator A and Operator B. A slight offset (1 – 3%) makes the two operators audibly distinct, just like a real QSO. Range: 0 – 10%.</td></tr>
+          <tr><td>Max speed difference</td><td><code class="default">2 WPM</code></td><td>Operator B's speed varies randomly up to ±N WPM from Operator A. Adds realism. Range: 0 – 10 WPM.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.5 Browser Settings -->
+    <h3 id="settings-browser">7.5 Browser Settings</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Home URL</td><td><code class="default">https://edition.cnn.com/</code></td><td>The URL that loads automatically when you open the embedded browser.</td></tr>
+          <tr><td>Basic characters only</td><td><code class="default">on</code></td><td>Filters article text to letters (A–Z), digits (0–9), spaces, periods, commas, and hyphens before encoding. Prevents unknown characters from silently dropping. Disable only if you need full Unicode Morse coverage.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note" style="margin-top: 24px;">
+      All settings are saved to device storage automatically. They survive app restarts and
+      OS updates. Use <strong>Factory Reset</strong> (Settings → General, bottom of page) to
+      restore all defaults without losing score history.
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.x
+</footer>
+
+</body>
+</html>
