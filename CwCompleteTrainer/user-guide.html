@@ -346,6 +346,7 @@
   <section id="getting-started">
     <h2><span class="num">1</span>Getting Started</h2>
 
+    <!-- Row 1: intro + launch screen -->
     <div class="cols">
       <div class="content">
         <p>
@@ -353,7 +354,6 @@
           Morse code (CW). It covers the full learning path from individual characters through
           words, sentences, QSO simulations, and live web articles.
         </p>
-
         <h3>The Launch Screen</h3>
         <p>When you open the app you see four training tiles and a Settings button:</p>
         <ul>
@@ -364,12 +364,23 @@
         </ul>
         <p>Tap a tile to enter that training mode. Use the <strong>Settings</strong> button
         at the bottom to configure speed, audio, TTS, and more.</p>
-
         <h3>Phone Permission</h3>
         <p>On first launch the app asks permission to read the phone state. This is used
         to <strong>automatically pause playback when you receive a call</strong>. You can
         allow or skip this; training works either way.</p>
+      </div>
+      <div class="screenshots">
+        <!-- img/01-launcher.png -->
+        <div class="screenshot">
+          <div class="icon">📱</div>
+          <div class="label">[screenshot: launcher screen]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 2: playback controls -->
+    <div class="cols">
+      <div class="content">
         <h3>Playback Controls</h3>
         <p>All training modes share the same playback controls:</p>
         <ul>
@@ -379,22 +390,18 @@
           <li><strong>Stop</strong> — stop and return to idle</li>
           <li><strong>Play Again</strong> — repeat from the beginning</li>
         </ul>
-
         <div class="tip">
           The WPM slider appears directly on the player screen by default
           <code class="default">on</code>. You can hide it in
           Settings → General and use the tappable speed badge instead.
         </div>
       </div>
-
       <div class="screenshots">
-        <!-- img/01-launcher.png -->
-  <div class="screenshots">
-    <!-- img/01-launcher.png -->
-    <img class="screenshot" src="img/Home.png" alt="Launcher screen">
-    <!-- img/02-player.png -->
-    <img class="screenshot" src="img/player_controls.png" alt="Player screen with controls">
-  </div>
+        <!-- img/02-player.png -->
+        <div class="screenshot">
+          <div class="icon">▶</div>
+          <div class="label">[screenshot: player screen with controls]</div>
+        </div>
       </div>
     </div>
   </section>
@@ -404,6 +411,7 @@
   <section id="character-training">
     <h2><span class="num">2</span>Character Training</h2>
 
+    <!-- Row 1: overview + full screen -->
     <div class="cols">
       <div class="content">
         <p>
@@ -411,7 +419,6 @@
           by <em>LCWO.net</em>. You start with just two characters (K and M) and add one new
           character at a time as your confidence grows. All 40 CW characters are covered.
         </p>
-
         <h3>Selecting Your Level</h3>
         <p>
           The character set panel shows all 40 characters as chips. Characters at or below
@@ -424,19 +431,29 @@
           <li>Default level: <code class="default">2 (K, M)</code></li>
           <li>Level range: 2 – 40</li>
         </ul>
+      </div>
+      <div class="screenshots">
+        <!-- img/03-character-training.png -->
+        <div class="screenshot">
+          <div class="icon">🔡</div>
+          <div class="label">[screenshot: character training screen]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 2: playing + TTS + game -->
+    <div class="cols">
+      <div class="content">
         <h3>Playing an Exercise</h3>
         <p>
           Tap <strong>Play</strong> to generate a fresh exercise: 50 groups of 5 randomly
           chosen characters from your current level, transmitted at your configured speed.
           A VVV opening and --- closing marker are added automatically.
         </p>
-
         <div class="note">
           The recommended approach: stay at a level until you can copy at least 90% of
           characters comfortably, then tap the next chip to advance.
         </div>
-
         <h3>Text-to-Speech (TTS)</h3>
         <p>
           When TTS is enabled (Settings → Text-to-Speech), each character is
@@ -448,20 +465,13 @@
           <li><strong>NATO/ICAO</strong> — phonetic alphabet ("Kilo", "Mike", "Romeo", …)</li>
         </ul>
         <p>Configure TTS delays and volume in Settings → Text-to-Speech.</p>
-
         <h3>Quick Game</h3>
         <p>
           Tap <strong>Quick Game</strong> to enter the <a href="#char-game">Character Match</a>
           game — a timed single-character recognition quiz using your current Koch level.
         </p>
       </div>
-
       <div class="screenshots">
-        <!-- img/03-character-training.png -->
-        <div class="screenshot">
-          <div class="icon">🔡</div>
-          <div class="label">[screenshot: character training screen]</div>
-        </div>
         <!-- img/04-character-chips.png -->
         <div class="screenshot">
           <div class="icon">🟦</div>
@@ -476,9 +486,9 @@
   <section id="word-training">
     <h2><span class="num">3</span>Word Training</h2>
 
+    <!-- Row 1: common words -->
     <div class="cols">
       <div class="content">
-
         <h3>Common Words</h3>
         <p>
           Select a maximum word length using the chips (3 – 13 characters). The app loads
@@ -491,7 +501,19 @@
           <li>Words are reshuffled each time you tap Play.</li>
         </ul>
         <p>Tap <strong>Play</strong> to start, or <strong>Quick Game</strong> for a timed word-recognition quiz.</p>
+      </div>
+      <div class="screenshots">
+        <!-- img/05-word-training.png -->
+        <div class="screenshot">
+          <div class="icon">📝</div>
+          <div class="label">[screenshot: word training screen]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 2: abbreviations + callsigns + file -->
+    <div class="cols">
+      <div class="content">
         <h3>HAM Abbreviations</h3>
         <p>
           A curated list of standard CW abbreviations used on the air: QRM, QRN, QSO, CQ,
@@ -501,7 +523,6 @@
           <li>TTS spells each abbreviation letter by letter (e.g., "Q – R – M").</li>
           <li>Repeat count setting applies here too.</li>
         </ul>
-
         <h3>Call Signs</h3>
         <p>
           Bundled callsign lists, normalised and validated (no portable /AM, /MM suffixes).
@@ -511,22 +532,14 @@
           <li>TTS spells each callsign character by character.</li>
           <li>Quick Game mode available for timed callsign recognition.</li>
         </ul>
-
         <h3>From File</h3>
         <p>
           Tap the <strong>file upload button</strong> to pick a <code>.txt</code> file from
           your device's Downloads folder. The file content is played as a word or text list.
           This is useful for custom vocabulary lists or your own training material.
         </p>
-
       </div>
-
       <div class="screenshots">
-        <!-- img/05-word-training.png -->
-        <div class="screenshot">
-          <div class="icon">📝</div>
-          <div class="label">[screenshot: word training screen]</div>
-        </div>
         <!-- img/06-word-training-chips.png -->
         <div class="screenshot">
           <div class="icon">🔢</div>
@@ -541,9 +554,9 @@
   <section id="text-qso">
     <h2><span class="num">4</span>Text &amp; QSO Training</h2>
 
-    <div class="cols wide">
+    <!-- Row 1: sentences + file -->
+    <div class="cols">
       <div class="content">
-
         <h3>English Sentences</h3>
         <p>
           Choose a maximum sentence length (3 – 10 words) with the chips. Sentences are
@@ -554,13 +567,24 @@
           <li>Default max words: <code class="default">5 words</code></li>
           <li>Tap <strong>Quick Game</strong> for the <a href="#phrase-game">Phrase Error Spotter</a> game.</li>
         </ul>
-
         <h3>From File</h3>
         <p>
           Same file picker as Word Training — upload any <code>.txt</code> file and play it
           as a full text exercise.
         </p>
+      </div>
+      <div class="screenshots">
+        <!-- img/07-text-training.png -->
+        <div class="screenshot">
+          <div class="icon">📄</div>
+          <div class="label">[screenshot: text training screen]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 2: QSO simulations -->
+    <div class="cols">
+      <div class="content">
         <h3>QSO Simulations</h3>
         <p>
           The app generates realistic two-operator QSO conversations. Three variants are
@@ -571,7 +595,6 @@
           <li><strong>Play SOTA</strong> — Summits on the Air activation QSO with real SOTA references</li>
           <li><strong>Play POTA</strong> — Parks on the Air activation QSO with real POTA references</li>
         </ul>
-
         <h4>During QSO Playback</h4>
         <ul>
           <li>The transcript is revealed <strong>line by line</strong> as each exchange plays.</li>
@@ -580,28 +603,19 @@
               (offset: <code class="default">1.5%</code>) — making them easier to distinguish by ear.</li>
           <li>Text display mode (full at start / chars as played / full at end) applies here.</li>
         </ul>
-
         <h4>Controls During QSO</h4>
         <ul>
           <li><strong>Play Again</strong> — replay the same QSO from the beginning</li>
           <li><strong>Play Another QSO</strong> — generate and play a brand-new QSO</li>
         </ul>
-
         <h3>QSO Games</h3>
         <ul>
           <li><strong>QSO Game</strong> — listen to a full QSO, then answer multiple-choice questions about what was exchanged</li>
           <li><strong>SOTA/POTA Game</strong> — same format but with mixed SOTA and POTA activations</li>
         </ul>
         <p>See <a href="#quick-games">Quick Games</a> for full details on scoring and mechanics.</p>
-
       </div>
-
       <div class="screenshots">
-        <!-- img/07-text-training.png -->
-        <div class="screenshot">
-          <div class="icon">📄</div>
-          <div class="label">[screenshot: text training screen]</div>
-        </div>
         <!-- img/08-qso-transcript.png -->
         <div class="screenshot">
           <div class="icon">🎙</div>
@@ -616,13 +630,13 @@
   <section id="web-browsing">
     <h2><span class="num">5</span>CW Web Browsing</h2>
 
+    <!-- Row 1: URL paste -->
     <div class="cols">
       <div class="content">
         <p>
           Convert any online article to Morse audio in seconds — useful for practising with
           real-world content at your target speed.
         </p>
-
         <h3>URL Paste (Home Screen)</h3>
         <ol>
           <li>Tap <strong>CW Web Browsing</strong> from the launcher.</li>
@@ -632,7 +646,19 @@
           <li>Tap <strong>Convert to Morse</strong> on the article card → playback starts on
               the Player screen.</li>
         </ol>
+      </div>
+      <div class="screenshots">
+        <!-- img/09-home-screen.png -->
+        <div class="screenshot">
+          <div class="icon">🌐</div>
+          <div class="label">[screenshot: home screen — URL input]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 2: embedded browser + filters -->
+    <div class="cols">
+      <div class="content">
         <h3>Embedded Browser</h3>
         <ol>
           <li>Tap <strong>Open Browser</strong> on the Home screen to open the built-in WebView.</li>
@@ -640,36 +666,25 @@
           <li>Tap the <strong>Convert</strong> floating button (bottom-right) to extract the
               current page and start playback.</li>
         </ol>
-
         <div class="tip">
           The home URL that loads when you open the browser is configurable in
           Settings → Browser Settings. Default: <code class="default">https://edition.cnn.com/</code>
         </div>
-
         <h3>Basic Characters Only</h3>
         <p>
           When enabled <code class="default">on by default</code>, the text is filtered to
           letters, digits, spaces, periods, commas, and hyphens before encoding. This
           removes symbols, emoji, and special characters that don't have Morse equivalents.
-          Disable in Settings → Browser Settings if you want full character coverage
-          (requires the characters to be in the Morse table).
+          Disable in Settings → Browser Settings if you want full character coverage.
         </p>
-
         <h3>Exercise Length</h3>
         <p>
           Long articles are automatically truncated according to your exercise length setting
           (Settings → General). Default: <code class="default">5 minutes</code>. Set to
           <em>Unlimited</em> to play the full article.
         </p>
-
       </div>
-
       <div class="screenshots">
-        <!-- img/09-home-screen.png -->
-        <div class="screenshot">
-          <div class="icon">🌐</div>
-          <div class="label">[screenshot: home screen — URL input]</div>
-        </div>
         <!-- img/10-browser.png -->
         <div class="screenshot">
           <div class="icon">🔗</div>
@@ -684,13 +699,13 @@
   <section id="quick-games">
     <h2><span class="num">6</span>Quick Games</h2>
 
+    <!-- Row 1: overview + game cards -->
     <div class="cols">
       <div class="content">
         <p>
           Every training mode has a <strong>Quick Game</strong> button that launches a timed
           listening quiz. Games are designed for short, focused sessions of 5 – 10 minutes.
         </p>
-
         <div class="game-grid">
           <div class="game-card" id="char-game">
             <div class="game-title">Character Match</div>
@@ -721,7 +736,19 @@
             <div class="game-stat">Pool: <span>Generated QSO (standard / SOTA / POTA)</span></div>
           </div>
         </div>
+      </div>
+      <div class="screenshots">
+        <!-- img/11-character-game.png -->
+        <div class="screenshot">
+          <div class="icon">🎮</div>
+          <div class="label">[screenshot: character game — timer bar + answer buttons]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 2: how games work + speed ladder -->
+    <div class="cols">
+      <div class="content">
         <h3>How Character / Word / Phrase Games Work</h3>
         <ol>
           <li>A character, word, or sentence plays in Morse.</li>
@@ -731,27 +758,12 @@
           <li>Feedback flashes green or red for 1 – 3 seconds, then the next item plays.</li>
           <li>Three wrong answers ends the game.</li>
         </ol>
-
         <div class="note">
           For the <strong>Phrase Error Spotter</strong>, the audio <em>always</em> plays the
           correct sentence. The text on screen may show a version with one word secretly
           replaced. Your task is to judge whether what you <em>hear</em> matches what you
           <em>see</em>.
         </div>
-
-        <h3>How the QSO Quiz Works</h3>
-        <ol>
-          <li><strong>Listening phase:</strong> a complete two-operator QSO plays. Scroll
-              through the transcript as it is revealed line by line.</li>
-          <li><strong>Quiz phase:</strong> 4 – 10 multiple-choice questions are asked about
-              facts from the QSO (callsigns, RST reports, name, QTH, etc.).</li>
-          <li>Each question has a 15-second timer. Answer before it runs out.</li>
-          <li><strong>Review phase:</strong> your score, per-question breakdown, and the full
-              QSO transcript are shown.</li>
-        </ol>
-        <p>The QSO Quiz adapts its WPM during the session: +0.5 WPM if accuracy &gt; 75%,
-        −0.5 WPM if accuracy &lt; 50%, clamped between 5 and 40 WPM.</p>
-
         <h3>Speed Ladder</h3>
         <p>
           Available in Character, Word, and Phrase games. Toggle with the <strong>⚡</strong>
@@ -764,7 +776,31 @@
           <li>Resets to your settings WPM when toggled on or when a new game starts</li>
         </ul>
         <p>When Speed Ladder is active the score strip shows your current ladder speed (⚡ N.N WPM) instead of the best-streak counter.</p>
+      </div>
+      <div class="screenshots">
+        <!-- img/12-game-over.png -->
+        <div class="screenshot">
+          <div class="icon">📊</div>
+          <div class="label">[screenshot: game-over screen with score chart]</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Row 3: QSO quiz + scoring -->
+    <div class="cols">
+      <div class="content">
+        <h3>How the QSO Quiz Works</h3>
+        <ol>
+          <li><strong>Listening phase:</strong> a complete two-operator QSO plays. Scroll
+              through the transcript as it is revealed line by line.</li>
+          <li><strong>Quiz phase:</strong> 4 – 10 multiple-choice questions are asked about
+              facts from the QSO (callsigns, RST reports, name, QTH, etc.).</li>
+          <li>Each question has a 15-second timer. Answer before it runs out.</li>
+          <li><strong>Review phase:</strong> your score, per-question breakdown, and the full
+              QSO transcript are shown.</li>
+        </ol>
+        <p>The QSO Quiz adapts its WPM during the session: +0.5 WPM if accuracy &gt; 75%,
+        −0.5 WPM if accuracy &lt; 50%, clamped between 5 and 40 WPM.</p>
         <h3>Scoring</h3>
         <div class="card">
           <p style="font-family: monospace; font-size: 0.95rem; color: var(--accent);">
@@ -775,26 +811,13 @@
             Faster answers and higher WPM produce higher scores.
           </p>
         </div>
-
         <h3>Score History</h3>
         <p>
           Your last 50 games per game type are stored. A chart and your last 5 games are
           shown on the game-over screen. Access the full history from the game-over screen.
         </p>
-
       </div>
-
       <div class="screenshots">
-        <!-- img/11-character-game.png -->
-        <div class="screenshot">
-          <div class="icon">🎮</div>
-          <div class="label">[screenshot: character game — timer bar + answer buttons]</div>
-        </div>
-        <!-- img/12-game-over.png -->
-        <div class="screenshot">
-          <div class="icon">📊</div>
-          <div class="label">[screenshot: game-over screen with score chart]</div>
-        </div>
         <!-- img/13-qso-game-quiz.png -->
         <div class="screenshot">
           <div class="icon">❓</div>
