@@ -16,12 +16,12 @@
 <nav>
   <span>Jump to:</span>
   <a href="#getting-started">Getting Started</a>
+  <a href="#settings">Settings</a>
   <a href="#character-training">Character Training</a>
   <a href="#word-training">Word Training</a>
   <a href="#text-qso">Text &amp; QSO Training</a>
   <a href="#web-browsing">CW Web Browsing</a>
   <a href="#quick-games">Quick Games</a>
-  <a href="#settings">Settings</a>
 </nav>
 
 <main>
@@ -48,6 +48,13 @@
         </ul>
         <p>Tap a tile to enter that training mode. Use the <strong>Settings</strong> button
         at the bottom to configure speed, audio, TTS, and more.</p>
+        <div class="note">
+          Every training mode has its own set of configurable parameters in Settings.
+          It is strongly recommended to read the <a href="#settings">Settings</a> section
+          alongside the description of each feature — many behaviours (speed, spacing,
+          exercise length, audio quality, TTS, QSO realism) can be tuned to match your
+          current skill level and training goals.
+        </div>
         <h3>Phone Permission</h3>
         <p>On first launch the app asks permission to read the phone state. This is used
         to <strong>automatically pause playback when you receive a call</strong>. You can
@@ -91,9 +98,142 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════ 2. Character Training -->
+  <!-- ═══════════════════════════════════════════════════════ 2. Settings -->
+  <section id="settings">
+    <h2><span class="num">2</span>Settings</h2>
+
+    <p>
+      Open Settings from the launcher screen. Five sub-sections cover all configurable
+      parameters. All changes take effect immediately and are saved automatically.
+      Read this section together with the feature descriptions below — the settings
+      directly shape how every exercise sounds and behaves.
+    </p>
+    <p>
+      <strong>Factory Reset</strong> (at the bottom of Settings → General) restores every
+      setting to its default value without affecting your onboarding status or score history.
+    </p>
+
+    <!-- 2.1 General -->
+    <h3 id="settings-general">2.1 General</h3>
+    <p>These settings apply to all training modes.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
+          <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Leave blank to disable.</td></tr>
+          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Displays a live WPM slider on the player screen. When off, a tappable speed badge is shown instead (tap → Settings).</td></tr>
+          <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
+          <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
+          <tr><td>Auto Speed — WPM step</td><td><code class="default">0.02</code></td><td>Fractional WPM added at each threshold crossing.</td></tr>
+          <tr><td>Start pause</td><td><code class="default">0 ms</code></td><td>Silence inserted before the first Morse symbol. Useful to prepare before copying starts.</td></tr>
+          <tr><td>Dash-to-dot ratio</td><td><code class="default">3.0</code></td><td>Duration of a dah relative to a dit. Standard Morse = 3.0. Increase for a more characteristic fist.</td></tr>
+          <tr><td>Char spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the inter-character gap (normally 3 dits). Values above 1.0 add extra space between characters — helpful when learning new characters.</td></tr>
+          <tr><td>Word spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the word gap (normally 7 dits). Values above 1.0 add extra pause between words.</td></tr>
+          <tr><td>Exercise length mode</td><td><code class="default">By minutes</code></td><td>Unlimited: play everything. By minutes: truncate at N×WPM×5 characters. By char count: truncate after N characters.</td></tr>
+          <tr><td>Exercise length value</td><td><code class="default">5</code></td><td>Minutes or character count used when exercise length mode is not Unlimited.</td></tr>
+          <tr><td>Text display mode</td><td><code class="default">Chars as played</code></td><td><em>Full at start</em>: show all text immediately. <em>Chars as played</em>: reveal progressively. <em>Full at end</em>: show only after playback finishes. Choose "Full at end" to train pure copying without visual cues.</td></tr>
+          <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
+          <tr><td>Keep screen on</td><td><code class="default">off</code></td><td>Prevents the device screen from dimming or locking during playback.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2.2 Audio -->
+    <h3 id="settings-audio">2.2 Audio</h3>
+    <p>Tone quality, volume, and interference simulation. QRM and QRN apply to all
+    training modes and are a powerful way to progressively increase difficulty.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sidetone frequency</td><td><code class="default">700 Hz</code></td><td>Carrier frequency of the Morse tone. Range: 450 – 1000 Hz. 700 Hz is the standard contest sidetone.</td></tr>
+          <tr><td>Dit pitch offset</td><td><code class="default">0% (off)</code></td><td>Pitch difference between dit and dah. Negative = dit lower than dah; positive = dit higher. Range: ±10%. Useful for emulating a real key feel.</td></tr>
+          <tr><td>Attack time</td><td><code class="default">5 ms</code></td><td>Tone fade-in duration. Longer = softer clicks; shorter = sharper keying. Range: 0 – 20 ms.</td></tr>
+          <tr><td>Release time</td><td><code class="default">5 ms</code></td><td>Tone fade-out duration. Range: 0 – 50 ms.</td></tr>
+          <tr><td>Master volume</td><td><code class="default">0.8</code></td><td>Overall playback level (0.0 – 1.0).</td></tr>
+          <tr><td>Dah volume</td><td><code class="default">1.0</code></td><td>Relative level of dah elements (0.0 – 1.0).</td></tr>
+          <tr><td>Dit volume</td><td><code class="default">1.0</code></td><td>Relative level of dit elements (0.0 – 1.0).</td></tr>
+          <tr><td>QRM (interference)</td><td><code class="default">off</code></td><td>Simulates radio-frequency interference mixed into the audio — other stations transmitting CW near your frequency. Five difficulty levels from Beginner to Contest. Start at Beginner and increase as your copying improves. Set level above 0 to enable.</td></tr>
+          <tr><td>QRM minimum offset</td><td><code class="default">200 Hz</code></td><td>Minimum frequency separation between QRM sources and the main signal. Reduce for a more challenging contest-style pile-up.</td></tr>
+          <tr><td>QRN (atmospheric noise)</td><td><code class="default">off</code></td><td>Simulates atmospheric static noise (crackles, crashes) typical of HF bands. Five difficulty levels from Beginner (light crackle) to Storm (heavy interference). Set level above 0 to enable.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2.3 Text-to-Speech -->
+    <h3 id="settings-tts">2.3 Text-to-Speech</h3>
+    <p>
+      When TTS is enabled, the app speaks each training item aloud after its Morse audio
+      drains. This confirms what you heard and reinforces the association between sound and
+      meaning. TTS works in Character, Word, and Text training modes. It is especially
+      useful for beginners who want immediate feedback after each item.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Enable TTS</td><td><code class="default">on</code></td><td>Master switch. When on, training modes use the Morse → pause → speak cycle instead of direct playback.</td></tr>
+          <tr><td>Pronunciation mode</td><td><code class="default">Normal</code></td><td><em>Normal</em>: letter names and natural speech ("Kay", "the cat sat"). <em>NATO/ICAO</em>: phonetic alphabet for individual characters ("Kilo", "Tango").</td></tr>
+          <tr><td>TTS volume</td><td><code class="default">1.0</code></td><td>Volume of the spoken output relative to the system TTS engine level.</td></tr>
+          <tr><td>Pre-delay</td><td><code class="default">500 ms</code></td><td>Silence between the end of Morse audio and the start of speech. Gives you time to recall the character before the answer is spoken.</td></tr>
+          <tr><td>Post-delay</td><td><code class="default">500 ms</code></td><td>Silence after speech, before the next item begins.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2.4 QSO Simulations -->
+    <h3 id="settings-qso">2.4 QSO Simulations</h3>
+    <p>
+      These settings control how generated QSOs sound and how realistic they are.
+      See <a href="#text-qso">Text &amp; QSO Training</a> for a full description of how
+      QSO simulations work.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>QSO type</td><td><code class="default">Realistic QSO</code></td><td><em>Realistic QSO</em>: a natural ragchew with varying exchanges — closer to what you will hear on the air. <em>Training QSO</em>: a structured beginner QSO with fixed, predictable exchanges — easier to follow when starting out.</td></tr>
+          <tr><td>Operator B sidetone offset</td><td><code class="default">1.5%</code></td><td>Frequency difference between Operator A and Operator B. A slight offset (1 – 3%) makes the two operators audibly distinct by ear, just like tuning across a real QSO. Set to 0 for identical tones. Range: 0 – 10%.</td></tr>
+          <tr><td>Max speed difference</td><td><code class="default">2 WPM</code></td><td>Operator B's speed varies randomly up to ±N WPM from Operator A's speed. Adding a small difference (1 – 3 WPM) makes the exercise feel more like a real on-air exchange. Range: 0 – 10 WPM.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2.5 Browser Settings -->
+    <h3 id="settings-browser">2.5 Browser Settings</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Home URL</td><td><code class="default">https://arrl.org</code></td><td>The URL that loads automatically when you open the embedded browser.</td></tr>
+          <tr><td>Basic characters only</td><td><code class="default">on</code></td><td>Filters article text to letters (A–Z), digits (0–9), spaces, periods, commas, and hyphens before encoding. Prevents unknown characters from silently dropping. Disable only if you need full Unicode Morse coverage.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note" style="margin-top: 24px;">
+      All settings are saved to device storage automatically. They survive app restarts and
+      OS updates. Use <strong>Factory Reset</strong> (Settings → General, bottom of page) to
+      restore all defaults without losing score history.
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ 3. Character Training -->
   <section id="character-training">
-    <h2><span class="num">2</span>Character Training</h2>
+    <h2><span class="num">3</span>Character Training</h2>
 
     <!-- Row 1: overview + full screen -->
     <div class="cols">
@@ -117,7 +257,6 @@
         </ul>
       </div>
       <div class="screenshots">
-        <!-- img/03-character-training.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/Koch.jpg" alt="Koch Level Setting">
         </div>
@@ -139,7 +278,7 @@
         </div>
         <h3>Text-to-Speech (TTS)</h3>
         <p>
-          When TTS is enabled (Settings → Text-to-Speech), each character is
+          When TTS is enabled (<a href="#settings-tts">Settings → Text-to-Speech</a>), each character is
           <em>spoken aloud</em> after its Morse plays, giving you immediate confirmation.
           Two modes are available:
         </p>
@@ -147,7 +286,6 @@
           <li><strong>Normal</strong> <code class="default">default</code> — letter name spoken naturally ("Kay", "Mike", …)</li>
           <li><strong>NATO/ICAO</strong> — phonetic alphabet ("Kilo", "Mike", "Romeo", …)</li>
         </ul>
-        <p>Configure TTS delays and volume in Settings → Text-to-Speech.</p>
         <h3>Quick Game</h3>
         <p>
           Tap <strong>Quick Game</strong> to enter the <a href="#char-game">Character Match</a>
@@ -155,7 +293,6 @@
         </p>
       </div>
       <div class="screenshots">
-        <!-- img/04-character-chips.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/TTS.jpg" alt="TTS Controls">
         </div>
@@ -164,9 +301,9 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════ 3. Word Training -->
+  <!-- ═══════════════════════════════════════════════════════ 4. Word Training -->
   <section id="word-training">
-    <h2><span class="num">3</span>Word Training</h2>
+    <h2><span class="num">4</span>Word Training</h2>
 
     <!-- Row 1: common words -->
     <div class="cols">
@@ -185,7 +322,6 @@
         <p>Tap <strong>Play</strong> to start, or <strong>Quick Game</strong> for a timed word-recognition quiz.</p>
       </div>
       <div class="screenshots">
-        <!-- img/05-word-training.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/Word_Training.jpg" alt="Word Training Screen">
         </div>
@@ -216,18 +352,24 @@
         <h3>From File</h3>
         <p>
           Tap the <strong>file upload button</strong> to pick a <code>.txt</code> file from
-          your device's Downloads folder. The file content is played as a word or text list.
-          This is useful for custom vocabulary lists or your own training material.
+          your device's Downloads folder. Words are picked in <strong>random order</strong>
+          — this mode is intended for custom vocabulary lists, not continuous reading.
         </p>
+        <div class="tip">
+          If you want to play a text file in its original sequence (e.g. a story or article),
+          use <strong>From File</strong> under
+          <a href="#text-qso">Text &amp; QSO Training</a> instead — that mode preserves
+          the original order and treats the file as continuous prose.
+        </div>
       </div>
 
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════ 4. Text & QSO Training -->
+  <!-- ═══════════════════════════════════════════════════════ 5. Text & QSO Training -->
   <section id="text-qso">
-    <h2><span class="num">4</span>Text &amp; QSO Training</h2>
+    <h2><span class="num">5</span>Text &amp; QSO Training</h2>
 
     <!-- Row 1: sentences + file -->
     <div class="cols">
@@ -244,12 +386,14 @@
         </ul>
         <h3>From File</h3>
         <p>
-          Same file picker as Word Training — upload any <code>.txt</code> file and play it
-          as a full text exercise.
+          Pick a <code>.txt</code> file from your Downloads folder. The file content is
+          played as <strong>continuous prose in its original order</strong> — ideal for
+          stories, news articles, or any text where sequence matters. Use
+          <a href="#word-training">Word Training → From File</a> if you want random
+          word-by-word practice from a list instead.
         </p>
       </div>
       <div class="screenshots">
-        <!-- img/07-text-training.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/Text_Training.jpg" alt="Text / QSO Training Screen">
         </div>
@@ -273,8 +417,8 @@
         <ul>
           <li>The transcript is revealed <strong>line by line</strong> as each exchange plays.</li>
           <li><strong>Operator A</strong> lines appear in blue; <strong>Operator B</strong> lines in amber.</li>
-          <li>The two operators transmit on slightly different frequencies
-              (offset: <code class="default">1.5%</code>) — making them easier to distinguish by ear.</li>
+          <li>The two operators transmit on slightly different frequencies — making them
+              easier to distinguish by ear (configurable in <a href="#settings-qso">Settings → QSO Simulations</a>).</li>
           <li>Text display mode (full at start / chars as played / full at end) applies here.</li>
         </ul>
         <h4>Controls During QSO</h4>
@@ -282,6 +426,15 @@
           <li><strong>Play Again</strong> — replay the same QSO from the beginning</li>
           <li><strong>Play Another QSO</strong> — generate and play a brand-new QSO</li>
         </ul>
+        <div class="note">
+          QSO realism is controlled by <a href="#settings-qso">Settings → QSO Simulations</a>.
+          Key parameters: <strong>QSO type</strong> (Realistic ragchew vs. structured Training
+          QSO), <strong>Operator B sidetone offset</strong> (frequency difference between the
+          two operators — set to 0 for identical tones, increase for a more challenging
+          copy), and <strong>Max speed difference</strong> (how much Operator B's WPM can
+          vary from Operator A). Start with a Training QSO at 0 offset and 0 speed
+          difference, then progressively increase realism as you improve.
+        </div>
         <h3>QSO Games</h3>
         <ul>
           <li><strong>QSO Game</strong> — listen to a full QSO, then answer multiple-choice questions about what was exchanged</li>
@@ -290,18 +443,31 @@
         <p>See <a href="#quick-games">Quick Games</a> for full details on scoring and mechanics.</p>
       </div>
       <div class="screenshots">
-        <!-- img/08-qso-transcript.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/RC_QSO.jpg" alt="Ragchew QSO exchange">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: QSO settings screenshot -->
+    <div class="cols">
+      <div class="content">
+        <h3>QSO Settings in Detail</h3>
+        <p>Reach QSO-specific settings via Settings → QSO Simulations from the launcher.
+        The screenshot shows the full set of options.</p>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/QSO_Settings.jpg" alt="QSO Settings screen">
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════ 5. CW Web Browsing -->
+  <!-- ═══════════════════════════════════════════════════════ 6. CW Web Browsing -->
   <section id="web-browsing">
-    <h2><span class="num">5</span>CW Web Browsing</h2>
+    <h2><span class="num">6</span>CW Web Browsing</h2>
 
     <!-- Row 1: browser -->
     <div class="cols">
@@ -319,7 +485,7 @@
         </ol>
         <div class="tip">
           The URL that loads when you open the browser is configurable in
-          Settings → Browser Settings. Default: <code class="default">https://arrl.org</code>
+          <a href="#settings-browser">Settings → Browser Settings</a>. Default: <code class="default">https://arrl.org</code>
         </div>
         <h3>Basic Characters Only</h3>
         <p>
@@ -331,12 +497,11 @@
         <h3>Exercise Length</h3>
         <p>
           Long articles are automatically truncated according to your exercise length setting
-          (Settings → General). Default: <code class="default">5 minutes</code>. Set to
+          (<a href="#settings-general">Settings → General</a>). Default: <code class="default">5 minutes</code>. Set to
           <em>Unlimited</em> to play the full article.
         </p>
       </div>
       <div class="screenshots">
-        <!-- img/10-browser.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/Play_web_site.png" alt="Browser with Convert button">
         </div>
@@ -345,9 +510,9 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════ 6. Quick Games -->
+  <!-- ═══════════════════════════════════════════════════════ 7. Quick Games -->
   <section id="quick-games">
-    <h2><span class="num">6</span>Quick Games</h2>
+    <h2><span class="num">7</span>Quick Games</h2>
 
     <!-- Row 1: overview + game cards -->
     <div class="cols">
@@ -388,7 +553,6 @@
         </div>
       </div>
       <div class="screenshots">
-        <!-- img/11-character-game.png -->
         <div class="screenshot">
     <img class="screenshot" src="img/Word_Game.jpg" alt="Word Game Screen">
         </div>
@@ -427,7 +591,6 @@
         <p>When Speed Ladder is active the score strip shows your current ladder speed (⚡ N.N WPM) instead of the best-streak counter.</p>
       </div>
       <div class="screenshots">
-        <!-- img/12-game-over.png -->
         <div class="screenshot">
           <div class="icon">📊</div>
           <div class="label">[screenshot: game-over screen with score chart]</div>
@@ -467,134 +630,11 @@
         </p>
       </div>
       <div class="screenshots">
-        <!-- img/13-qso-game-quiz.png -->
         <div class="screenshot">
-    <img class="screenshot" src="img/QSO_Game.jpg" alt="Word Game Screen">
+    <img class="screenshot" src="img/QSO_Game.jpg" alt="QSO Game Screen">
         </div>
       </div>
     </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════ 7. Settings -->
-  <section id="settings">
-    <h2><span class="num">7</span>Settings</h2>
-
-    <p>
-      Open Settings from the launcher screen. Five sub-sections cover all configurable
-      parameters. All changes take effect immediately and are saved automatically.
-    </p>
-    <p>
-      <strong>Factory Reset</strong> (at the bottom of Settings → General) restores every
-      setting to its default value without affecting your onboarding status or score history.
-    </p>
-
-    <!-- 7.1 General -->
-    <h3 id="settings-general">7.1 General</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
-          <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>When set, characters play at the full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Must be lower than WPM. Leave blank to disable.</td></tr>
-          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Displays a live WPM slider on the player screen. When off, a tappable speed badge is shown instead (tap → Settings).</td></tr>
-          <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
-          <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
-          <tr><td>Auto Speed — WPM step</td><td><code class="default">0.02</code></td><td>Fractional WPM added at each threshold crossing. Multiplied by the number of crossings if multiple thresholds pass at once.</td></tr>
-          <tr><td>Start pause</td><td><code class="default">0 ms</code></td><td>Silence inserted before the first Morse symbol. Useful to prepare before copying starts.</td></tr>
-          <tr><td>Dash-to-dot ratio</td><td><code class="default">3.0</code></td><td>Duration of a dah relative to a dit. Standard Morse = 3.0. Increase for a more characteristic fist.</td></tr>
-          <tr><td>Char spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the inter-character gap (normally 3 dits). Values above 1.0 add extra space between characters.</td></tr>
-          <tr><td>Word spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the word gap (normally 7 dits). Values above 1.0 add extra pause between words.</td></tr>
-          <tr><td>Exercise length mode</td><td><code class="default">By minutes</code></td><td>Unlimited: play everything. By minutes: truncate at N×WPM×5 characters. By char count: truncate after N characters.</td></tr>
-          <tr><td>Exercise length value</td><td><code class="default">5</code></td><td>Minutes or character count used when exercise length mode is not Unlimited.</td></tr>
-          <tr><td>Text display mode</td><td><code class="default">Chars as played</code></td><td><em>Full at start</em>: show all text immediately. <em>Chars as played</em>: reveal progressively. <em>Full at end</em>: show only after playback finishes.</td></tr>
-          <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
-          <tr><td>Keep screen on</td><td><code class="default">off</code></td><td>Prevents the device screen from dimming or locking during playback.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 7.2 Audio -->
-    <h3 id="settings-audio">7.2 Audio</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Sidetone frequency</td><td><code class="default">700 Hz</code></td><td>Carrier frequency of the Morse tone. Range: 450 – 1000 Hz. 700 Hz is the standard contest sidetone.</td></tr>
-          <tr><td>Dit pitch offset</td><td><code class="default">0% (off)</code></td><td>Pitch difference between dit and dah. Negative = dit lower than dah; positive = dit higher. Range: ±10%. Useful for emulating a real key feel.</td></tr>
-          <tr><td>Attack time</td><td><code class="default">5 ms</code></td><td>Tone fade-in duration. Longer = softer clicks; shorter = sharper keying. Range: 0 – 20 ms.</td></tr>
-          <tr><td>Release time</td><td><code class="default">5 ms</code></td><td>Tone fade-out duration. Range: 0 – 50 ms.</td></tr>
-          <tr><td>Master volume</td><td><code class="default">0.8</code></td><td>Overall playback level (0.0 – 1.0).</td></tr>
-          <tr><td>Dah volume</td><td><code class="default">1.0</code></td><td>Relative level of dah elements (0.0 – 1.0).</td></tr>
-          <tr><td>Dit volume</td><td><code class="default">1.0</code></td><td>Relative level of dit elements (0.0 – 1.0).</td></tr>
-          <tr><td>QRM (interference)</td><td><code class="default">off</code></td><td>Simulates radio-frequency interference mixed into the audio. Five difficulty levels: Beginner, Easy, Medium, Hard, Contest. Set level above 0 to enable.</td></tr>
-          <tr><td>QRM minimum offset</td><td><code class="default">200 Hz</code></td><td>Minimum frequency separation between QRM sources and the main signal.</td></tr>
-          <tr><td>QRN (atmospheric noise)</td><td><code class="default">off</code></td><td>Simulates atmospheric static noise (crackles, crashes). Five difficulty levels. Set level above 0 to enable.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 7.3 Text-to-Speech -->
-    <h3 id="settings-tts">7.3 Text-to-Speech</h3>
-    <p>
-      When TTS is enabled, the app speaks each training item aloud after its Morse audio
-      drains. This confirms what you heard and reinforces the association between sound and
-      meaning. TTS works in Character, Word, and Text training modes.
-    </p>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Enable TTS</td><td><code class="default">on</code></td><td>Master switch. When on, training modes use the Morse → pause → speak cycle instead of direct playback.</td></tr>
-          <tr><td>Pronunciation mode</td><td><code class="default">Normal</code></td><td><em>Normal</em>: letter names and natural speech ("Kay", "the cat sat"). <em>NATO/ICAO</em>: phonetic alphabet for individual characters ("Kilo", "Tango").</td></tr>
-          <tr><td>TTS volume</td><td><code class="default">1.0</code></td><td>Volume of the spoken output relative to the system TTS engine level.</td></tr>
-          <tr><td>Pre-delay</td><td><code class="default">500 ms</code></td><td>Silence between the end of Morse audio and the start of speech. Gives time to recall before confirmation.</td></tr>
-          <tr><td>Post-delay</td><td><code class="default">500 ms</code></td><td>Silence after speech, before the next item begins.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 7.4 QSO Simulations -->
-    <h3 id="settings-qso">7.4 QSO Simulations</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>QSO type</td><td><code class="default">Realistic QSO</code></td><td><em>Realistic QSO</em>: a natural ragchew with varying exchanges. <em>Training QSO</em>: a structured beginner QSO with fixed, predictable exchanges — easier to follow when starting out.</td></tr>
-          <tr><td>Operator B sidetone offset</td><td><code class="default">1.5%</code></td><td>Frequency difference between Operator A and Operator B. A slight offset (1 – 3%) makes the two operators audibly distinct, just like a real QSO. Range: 0 – 10%.</td></tr>
-          <tr><td>Max speed difference</td><td><code class="default">2 WPM</code></td><td>Operator B's speed varies randomly up to ±N WPM from Operator A. Adds realism. Range: 0 – 10 WPM.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 7.5 Browser Settings -->
-    <h3 id="settings-browser">7.5 Browser Settings</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Home URL</td><td><code class="default">https://arrl.org</code></td><td>The URL that loads automatically when you open the embedded browser.</td></tr>
-          <tr><td>Basic characters only</td><td><code class="default">on</code></td><td>Filters article text to letters (A–Z), digits (0–9), spaces, periods, commas, and hyphens before encoding. Prevents unknown characters from silently dropping. Disable only if you need full Unicode Morse coverage.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="note" style="margin-top: 24px;">
-      All settings are saved to device storage automatically. They survive app restarts and
-      OS updates. Use <strong>Factory Reset</strong> (Settings → General, bottom of page) to
-      restore all defaults without losing score history.
-    </div>
-
   </section>
 
 </main>
