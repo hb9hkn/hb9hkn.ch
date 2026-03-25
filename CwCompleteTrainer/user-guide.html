@@ -162,9 +162,13 @@
         <ul>
           <li><strong>Play / Resume</strong> — start or continue</li>
           <li><strong>Pause</strong> — suspend (tap Resume to continue)</li>
-          <li><strong>−10 s</strong> — rewind ten seconds</li>
           <li><strong>Stop</strong> — stop and return to idle</li>
           <li><strong>Play Again</strong> — repeat from the beginning</li>
+        </ul>
+        <p>During <a href="#web-browsing">CW Web Browsing</a> playback, two additional rewind controls are available:</p>
+        <ul>
+          <li><strong>◁W</strong> — jump to the start of the previous word (plays the word gap before it)</li>
+          <li><strong>−10 s</strong> — rewind ten seconds</li>
         </ul>
         <div class="tip">
           The WPM slider appears directly on the player screen by default
@@ -209,6 +213,7 @@
         <tbody>
           <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
           <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Leave blank to disable.</td></tr>
+          <tr><td>Wordsworth WPM</td><td><code class="default">off</code></td><td>Word gaps only are extended to the rate you would hear at this lower WPM — inter-character gaps stay at full speed. Useful for practising full-speed copy while giving yourself more time between words. Mutually exclusive with Farnsworth. Leave blank to disable.</td></tr>
           <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Displays a live WPM slider on the player screen. When off, a tappable speed badge is shown instead (tap → Settings).</td></tr>
           <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
           <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
@@ -527,6 +532,9 @@
           <li><strong>Play SOTA</strong> — Summits on the Air activation QSO with real SOTA references</li>
           <li><strong>Play POTA</strong> — Parks on the Air activation QSO with real POTA references</li>
         </ul>
+        <div class="note">
+          Standard prosigns — <strong>AR</strong>, <strong>SK</strong>, <strong>KN</strong>, <strong>BK</strong>, and <strong>AS</strong> — are automatically recognised when they appear as standalone words in the QSO text and are transmitted as fused characters (no inter-element gap), matching on-air convention.
+        </div>
         <h4>During QSO Playback</h4>
         <ul>
           <li>The transcript is revealed <strong>line by line</strong> as each exchange plays.</li>
