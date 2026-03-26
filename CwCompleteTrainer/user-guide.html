@@ -11,7 +11,7 @@
 
 <header>
   <h1>CW Complete Trainer</h1>
-  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.20</div>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.31</div>
 </header>
 
 <nav>
@@ -227,6 +227,7 @@
           <tr><td>Text display mode</td><td><code class="default">Chars as played</code></td><td><em>Full at start</em>: show all text immediately. <em>Chars as played</em>: reveal progressively. <em>Full at end</em>: show only after playback finishes. Choose "Full at end" to train pure copying without visual cues.</td></tr>
           <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
           <tr><td>Keep screen on</td><td><code class="default">off</code></td><td>Prevents the device screen from dimming or locking during playback.</td></tr>
+          <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) have no upper cap regardless of this setting.</td></tr>
         </tbody>
       </table>
     </div>
@@ -323,6 +324,14 @@
           <tr><td>QSO type</td><td><code class="default">Realistic QSO</code></td><td><em>Realistic QSO</em>: a natural ragchew with varying exchanges — closer to what you will hear on the air. <em>Training QSO</em>: a structured beginner QSO with fixed, predictable exchanges — easier to follow when starting out.</td></tr>
           <tr><td>Operator B sidetone offset</td><td><code class="default">2%</code></td><td>Frequency difference between Operator A and Operator B. A slight offset (1 – 3%) makes the two operators audibly distinct by ear, just like tuning across a real QSO. Set to 0 for identical tones. Range: 0 – 10%.</td></tr>
           <tr><td>Max speed difference</td><td><code class="default">2 WPM</code></td><td>Operator B's speed varies randomly up to ±N WPM from Operator A's speed. Adding a small difference (1 – 3 WPM) makes the exercise feel more like a real on-air exchange. Range: 0 – 10 WPM.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Contest</div></td></tr>
+          <tr><td>Contest formats</td><td><code class="default">WPX</code></td><td>
+            One or more contest formats to practise. Check any combination — when multiple are selected, a different format is chosen for each QSO (no consecutive repeats).<br>
+            &bull; <strong>CQ WW WPX CW</strong> — 3-digit serial number + 5NN exchange.<br>
+            &bull; <strong>ARRL DX CW</strong> — state or province abbreviation (US/Canada) or power output (DX stations) + 5NN.<br>
+            &bull; <strong>CWops CWT</strong> — first name + CWops member number (member), country prefix (non-member), or CWA (CW Academy student).
+          </td></tr>
+          <tr><td>Abbreviated numbers</td><td><code class="default">60%</code></td><td>In WPX exchanges, probability that each serial number is sent with 0 and 9 abbreviated to T and N (e.g. 090 → TNT, 001 → TT1). A single roll decides the whole number — either fully abbreviated or fully numeric. Set to 0% to always send full digits; 100% to always abbreviate eligible digits.</td></tr>
         </tbody>
       </table>
     </div>
@@ -524,13 +533,14 @@
       <div class="content">
         <h3>QSO Simulations</h3>
         <p>
-          The app generates realistic two-operator QSO conversations. Three variants are
+          The app generates realistic two-operator QSO conversations. Four variants are
           available:
         </p>
         <ul>
           <li><strong>Play QSO</strong> — standard ragchew or structured training QSO</li>
           <li><strong>Play SOTA</strong> — Summits on the Air activation QSO with real SOTA references</li>
           <li><strong>Play POTA</strong> — Parks on the Air activation QSO with real POTA references</li>
+          <li><strong>Play Contest</strong> — simulated contest exchange using one of the enabled contest formats (WPX, ARRL DX, or CWops CWT); format is chosen randomly each time, with no consecutive repeats when multiple formats are selected</li>
         </ul>
         <div class="note">
           Standard prosigns — <strong>AR</strong>, <strong>SK</strong>, <strong>KN</strong>, <strong>BK</strong>, and <strong>AS</strong> — are automatically recognised when they appear as standalone words in the QSO text and are transmitted as fused characters (no inter-element gap), matching on-air convention.
@@ -561,6 +571,7 @@
         <ul>
           <li><strong>QSO Game</strong> — listen to a full QSO, then answer multiple-choice questions about what was exchanged</li>
           <li><strong>SOTA/POTA Game</strong> — same format but with mixed SOTA and POTA activations</li>
+          <li><strong>Contest Game</strong> — contest QSO quiz with questions about the exchanged data: serial numbers (WPX), state/province/power (ARRL DX), or name + member number/prefix/CWA (CWops CWT)</li>
         </ul>
         <p>See <a href="#quick-games">Quick Games</a> for full details on scoring and mechanics.</p>
       </div>
@@ -690,7 +701,7 @@
             <div class="game-stat">From: <span>Text &amp; QSO Training</span></div>
             <div class="game-stat">Timer: <span>15 s / question</span></div>
             <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
-            <div class="game-stat">Pool: <span>Generated QSO (standard / SOTA / POTA)</span></div>
+            <div class="game-stat">Pool: <span>Generated QSO (standard / SOTA / POTA / Contest)</span></div>
           </div>
         </div>
       </div>
@@ -753,7 +764,8 @@
               QSO transcript are shown.</li>
         </ol>
         <p>The QSO Quiz adapts its WPM during the session: +0.5 WPM if accuracy &gt; 75%,
-        −0.5 WPM if accuracy &lt; 50%, clamped between 5 and 40 WPM.</p>
+        −0.5 WPM if accuracy &lt; 50%, clamped between 5 and 40 WPM
+        (up to 80 WPM when <strong>High Speed Training</strong> is enabled in Settings → General).</p>
         <h3>Scoring</h3>
         <div class="card">
           <p style="font-family: monospace; font-size: 0.95rem; color: var(--accent);">
@@ -781,7 +793,7 @@
 </main>
 
 <footer>
-  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.20
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.31
 </footer>
 
 <!-- Lightbox overlay -->
