@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CW Complete Trainer — Release Notes</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
+  <style>
+    .release-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .release-header h2 {
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+    .release-date {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+    .tag-fix    { background: rgba(94,207,138,0.15);  color: var(--green);  border: 1px solid rgba(94,207,138,0.4); }
+    .tag-feat   { background: rgba(123,140,222,0.15); color: var(--accent); border: 1px solid rgba(123,140,222,0.4); }
+    .tag-change { background: rgba(240,192,64,0.12);  color: var(--amber);  border: 1px solid rgba(240,192,64,0.35); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CW Complete Trainer</h1>
+  <div class="sub">RELEASE NOTES &nbsp;·&nbsp; by HB9HKN</div>
+</header>
+
+<nav>
+  <span>Jump to:</span>
+  <a href="user-guide.html">User Guide</a>
+  <a href="CwCompleteTrainer_Privacy_Policy.html">Privacy Policy</a>
+</nav>
+
+<main>
+
+  <!-- ══════════════════════════════════════════════ v0.15.1 -->
+  <section id="v0.15.1">
+    <div class="release-header">
+      <h2>v0.15.1</h2>
+      <span class="release-date">2026-04-03</span>
+      <span class="tag tag-fix">Bug Fix</span>
+    </div>
+    <h3>Continent Slider — Proportional Redistribution</h3>
+    <p>
+      When you drag a continent percentage slider, the remaining percentage is now
+      redistributed <strong>proportionally</strong> across all other continents based on their
+      current values. Previously, the surplus or deficit cascaded only to the slider directly
+      below the one you moved, which felt arbitrary.
+    </p>
+    <ul>
+      <li>Dragging North America up reduces Europe, Asia, South America, Oceania, and Africa each by their fair share.</li>
+      <li>The six continent sliders always sum to exactly 100%.</li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.15.0 -->
+  <section id="v0.15.0">
+    <div class="release-header">
+      <h2>v0.15.0</h2>
+      <span class="release-date">2026-03-22</span>
+      <span class="tag tag-feat">New Feature</span>
+    </div>
+    <h3>Call Sign Settings</h3>
+    <p>
+      A new <strong>Call Sign Settings</strong> section in QSO Simulation Settings lets you
+      control which callsigns appear during QSO training and callsign practice.
+    </p>
+    <h4>Continent Distribution</h4>
+    <p>
+      Six linked sliders (North America, Europe, Asia, South America, Oceania, Africa) always
+      sum to 100%. The defaults reflect the real-world HAM population: NA 69%, EU 27%, and
+      1% each for AS/SA/OC/AF. Adjust them to focus on a specific region — for example, set
+      EU to 100% to practise with European callsigns exclusively.
+    </p>
+    <h4>Callsign Decoration</h4>
+    <p>
+      Two additional sliders control how many callsigns carry a
+      <strong>country prefix</strong> (e.g. <code>FR/3B8G/P</code>) or a
+      <strong>portable suffix</strong> (e.g. <code>3B8G/M</code>). The remainder comes
+      from the standard callsign pool.
+    </p>
+    <div class="note">
+      SOTA activators always use a portable suffix regardless of the suffix setting.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; HB9HKN &nbsp;·&nbsp; www.hb9hkn.ch
+</footer>
+
+</body>
+</html>
