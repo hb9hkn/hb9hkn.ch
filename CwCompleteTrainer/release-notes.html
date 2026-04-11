@@ -54,6 +54,142 @@
 
 <main>
 
+  <!-- ══════════════════════════════════════════════ v0.16.9 -->
+  <section id="v0.16.9">
+    <div class="release-header">
+      <h2>v0.16.9</h2>
+      <span class="release-date">2026-04-11</span>
+      <span class="tag tag-fix">Bug Fix</span>
+    </div>
+    <h3>Callsign Pick Game — Answer Color Feedback</h3>
+    <p>
+      After tapping an option in the Callsign Pick Game, all wrong options now turn red and
+      the correct option turns green — matching the color scheme used in all other games.
+      Previously, buttons either stayed blue (color was not applied) or used the wrong shade.
+      The correct-answer pause was also extended to 2 seconds to give you time to review the
+      result before the next round begins.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.16.6 -->
+  <section id="v0.16.6">
+    <div class="release-header">
+      <h2>v0.16.6</h2>
+      <span class="release-date">2026-04-08</span>
+      <span class="tag tag-feat">New Feature</span>
+    </div>
+    <h3>Callsign Pick Game</h3>
+    <p>
+      A new multiple-choice game is available under <strong>Word Training → Call Signs</strong>.
+      Instead of judging Correct / Wrong, you hear a callsign in Morse and must select the
+      correct one from 3 – 4 options.
+    </p>
+    <h4>How it works</h4>
+    <ul>
+      <li>Options are shown on screen while the Morse plays, but are disabled until audio finishes.</li>
+      <li>A 6-second timer starts when Morse ends — tap the correct callsign before time runs out.</li>
+      <li>Each foil differs from the correct callsign by exactly <em>one Morse-confusable character</em>
+          (e.g. H↔S, 9↔0, K↔N) — they are designed to be the most likely decoding errors.</li>
+      <li>TTS is suppressed regardless of your setting — the Morse audio is the only cue.</li>
+      <li>The Speed Ladder applies (+0.2 WPM correct, −0.1 WPM wrong).</li>
+    </ul>
+    <div class="note">
+      The number of options (3 or 4) adapts to available screen height.
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.16.5 -->
+  <section id="v0.16.5">
+    <div class="release-header">
+      <h2>v0.16.5</h2>
+      <span class="release-date">2026-04-07</span>
+      <span class="tag tag-fix">Bug Fix</span>
+    </div>
+    <h3>Contest QSO Accuracy Improvements</h3>
+    <p>Three fixes to make contest QSO simulation more realistic:</p>
+    <ul>
+      <li><strong>ARRL DX — 2×1 US callsigns:</strong> calls like <code>W1X</code> and
+          <code>K2Y</code> now correctly identify the district digit in position 2 and
+          generate the appropriate state exchange.</li>
+      <li><strong>CWops CWT — state/province:</strong> non-member US stations now send their
+          state, and VE stations send their province (instead of a generic country prefix).</li>
+      <li><strong>Copy-failure injection:</strong> with ~10% probability per exchange, the
+          simulated operator asks for a repeat (<code>?</code> or <code>AGN</code>) and
+          the other station retransmits. Adds realistic QSO copy-failure handling practice.</li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.16.4 -->
+  <section id="v0.16.4">
+    <div class="release-header">
+      <h2>v0.16.4</h2>
+      <span class="release-date">2026-04-06</span>
+      <span class="tag tag-feat">Enhancement</span>
+    </div>
+    <h3>QRM / QRN in CW Web Browsing</h3>
+    <p>
+      QRM and QRN interference now apply to <strong>CW Web Browsing</strong> playback as
+      well as all training modes. If you have interference or atmospheric noise enabled in
+      Settings → Audio, it will be mixed into web article audio — letting you practise
+      real-content copy under realistic band conditions.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.16.2 -->
+  <section id="v0.16.2">
+    <div class="release-header">
+      <h2>v0.16.2</h2>
+      <span class="release-date">2026-04-04</span>
+      <span class="tag tag-change">Change</span>
+    </div>
+    <h3>Continent Preset Buttons + Contest Abbreviation Fix</h3>
+    <p>
+      The six individual continent sliders in <strong>Call Sign Settings</strong> are now
+      complemented by three <strong>quick-select preset buttons</strong> (Europe, North America,
+      Asia) that set all six sliders at once. Sliders remain fully adjustable individually after
+      a preset is applied.
+    </p>
+    <p>
+      Also fixed: WPX contest abbreviations now only abbreviate <strong>0 → T</strong> and
+      <strong>9 → N</strong> (the standard Q-code shorthand). The earlier rule that also
+      abbreviated 1 → A was incorrect and has been removed.
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.16.0 -->
+  <section id="v0.16.0">
+    <div class="release-header">
+      <h2>v0.16.0</h2>
+      <span class="release-date">2026-04-03</span>
+      <span class="tag tag-feat">New Feature</span>
+    </div>
+    <h3>HAM Abbreviations Quick Game</h3>
+    <p>
+      A new <strong>Quick Game</strong> button is now available under
+      <strong>Word Training → HAM Abbreviations</strong>. The game follows the same
+      Correct / Wrong format as the Word game — hear an abbreviation in Morse, decide if
+      the text on screen matches — with a 6-second timer and Speed Ladder support.
+      TTS spells each abbreviation letter by letter when answering.
+    </p>
+    <p>Also in this release: game screens now keep the answer text visible from the
+    moment Morse starts, matching the behaviour of other game modes.</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ v0.15.2 -->
+  <section id="v0.15.2">
+    <div class="release-header">
+      <h2>v0.15.2</h2>
+      <span class="release-date">2026-04-03</span>
+      <span class="tag tag-fix">Bug Fix</span>
+    </div>
+    <h3>Bottom Content No Longer Clipped</h3>
+    <p>
+      On devices with a home indicator or navigation bar, the bottom of the Call Sign Settings
+      screen content was partially hidden behind the system navigation area.
+      Bottom padding now includes the system inset so all sliders and buttons are fully visible.
+    </p>
+  </section>
+
   <!-- ══════════════════════════════════════════════ v0.15.1 -->
   <section id="v0.15.1">
     <div class="release-header">

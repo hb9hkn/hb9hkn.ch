@@ -11,7 +11,7 @@
 
 <header>
   <h1>CW Complete Trainer</h1>
-  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.31</div>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.16.9</div>
 </header>
 
 <nav>
@@ -211,23 +211,29 @@
           <tr><th>Setting</th><th>Default</th><th>Description</th></tr>
         </thead>
         <tbody>
-          <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
-          <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Leave blank to disable.</td></tr>
-          <tr><td>Wordsworth WPM</td><td><code class="default">off</code></td><td>Word gaps only are extended to the rate you would hear at this lower WPM — inter-character gaps stay at full speed. Useful for practising full-speed copy while giving yourself more time between words. Mutually exclusive with Farnsworth. Leave blank to disable.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Exercise Length</div></td></tr>
+          <tr><td>Exercise length mode</td><td><code class="default">By minutes</code></td><td><em>Minutes</em>: truncate at N×WPM×5 characters. <em>Chars</em>: truncate after N characters. Tap the segmented button to switch; the value field below adapts.</td></tr>
+          <tr><td>Duration / Character count</td><td><code class="default">5 min</code></td><td>Minutes or character count used when a limit is set. Available values for Minutes: 1, 2, 3, 4, 5, 7, 10, 15, 20, 25, 30.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Speed</div></td></tr>
+          <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) have no upper cap regardless of this setting.</td></tr>
           <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Displays a live WPM slider on the player screen. When off, a tappable speed badge is shown instead (tap → Settings).</td></tr>
+          <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
+          <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Toggle the switch to enable, then set the target WPM.</td></tr>
+          <tr><td>Wordsworth WPM</td><td><code class="default">off</code></td><td>Word gaps only are extended to the rate you would hear at this lower WPM — inter-character gaps stay at full speed. Useful for practising full-speed copy while giving yourself more time between words. Mutually exclusive with Farnsworth.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Auto Speed</div></td></tr>
           <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
           <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
           <tr><td>Auto Speed — WPM step</td><td><code class="default">0.02</code></td><td>Fractional WPM added at each threshold crossing.</td></tr>
-          <tr><td>Start pause</td><td><code class="default">0 ms</code></td><td>Silence inserted before the first Morse symbol. Useful to prepare before copying starts.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Text Display</div></td></tr>
+          <tr><td>Text display mode</td><td><code class="default">Progressive</code></td><td><em>Progressive</em>: characters revealed as Morse plays. <em>At text end</em>: full text shown after each exchange — use this to train pure copying without visual cues. <em>Full text at start</em>: all text shown immediately.</td></tr>
+          <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Transmission</div></td></tr>
+          <tr><td>Start pause</td><td><code class="default">0 s</code></td><td>Silence inserted before the first Morse symbol. Useful to prepare before copying starts.</td></tr>
           <tr><td>Dash-to-dot ratio</td><td><code class="default">3.0</code></td><td>Duration of a dah relative to a dit. Standard Morse = 3.0. Increase for a more characteristic fist.</td></tr>
           <tr><td>Char spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the inter-character gap (normally 3 dits). Values above 1.0 add extra space between characters — helpful when learning new characters.</td></tr>
           <tr><td>Word spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the word gap (normally 7 dits). Values above 1.0 add extra pause between words.</td></tr>
-          <tr><td>Exercise length mode</td><td><code class="default">By minutes</code></td><td>Unlimited: play everything. By minutes: truncate at N×WPM×5 characters. By char count: truncate after N characters.</td></tr>
-          <tr><td>Exercise length value</td><td><code class="default">5</code></td><td>Minutes or character count used when exercise length mode is not Unlimited.</td></tr>
-          <tr><td>Text display mode</td><td><code class="default">Chars as played</code></td><td><em>Full at start</em>: show all text immediately. <em>Chars as played</em>: reveal progressively. <em>Full at end</em>: show only after playback finishes. Choose "Full at end" to train pure copying without visual cues.</td></tr>
-          <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Screen</div></td></tr>
           <tr><td>Keep screen on</td><td><code class="default">off</code></td><td>Prevents the device screen from dimming or locking during playback.</td></tr>
-          <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) have no upper cap regardless of this setting.</td></tr>
         </tbody>
       </table>
     </div>
@@ -332,6 +338,11 @@
             &bull; <strong>CWops CWT</strong> — first name + CWops member number (member), country prefix (non-member), or CWA (CW Academy student).
           </td></tr>
           <tr><td>Abbreviated numbers</td><td><code class="default">60%</code></td><td>In WPX exchanges, probability that each serial number is sent with 0 and 9 abbreviated to T and N (e.g. 090 → TNT, 001 → TT1). A single roll decides the whole number — either fully abbreviated or fully numeric. Set to 0% to always send full digits; 100% to always abbreviate eligible digits.</td></tr>
+          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Call Sign Settings</div></td></tr>
+          <tr><td>Continent presets</td><td><code class="default">—</code></td><td>Three quick-select buttons: <strong>Europe</strong>, <strong>North America</strong>, and <strong>Asia</strong>. Tapping a preset sets all six continent sliders to that region's default distribution. Sliders can be adjusted individually afterward.</td></tr>
+          <tr><td>Continent distribution sliders</td><td><code class="default">NA 69% / EU 27% / others 1%</code></td><td>Six linked sliders (North America, Europe, Asia, South America, Oceania, Africa) always sum to 100%. Adjusting one slider redistributes the remainder proportionally across the others. Set a continent to 100% to practise exclusively with callsigns from that region.</td></tr>
+          <tr><td>Country prefix probability</td><td><code class="default">0%</code></td><td>Fraction of callsigns that include a country prefix (e.g. <code>FR/3B8G</code>). Range: 0 – 100%.</td></tr>
+          <tr><td>Portable suffix probability</td><td><code class="default">0%</code></td><td>Fraction of callsigns that include a portable suffix (e.g. <code>HB9HKN/P</code>, <code>/M</code>). Range: 0 – 100%. SOTA activators always carry a portable suffix regardless of this setting.</td></tr>
         </tbody>
       </table>
     </div>
@@ -467,15 +478,18 @@
         <ul>
           <li>TTS spells each abbreviation letter by letter (e.g., "Q – R – M").</li>
           <li>Repeat count setting applies here too.</li>
+          <li>Tap <strong>Quick Game</strong> for a timed abbreviation recognition quiz (see <a href="#ham-game">HAM Abbreviations Game</a>).</li>
         </ul>
         <h3>Call Signs</h3>
         <p>
           Bundled callsign lists, normalised and validated (no portable /AM, /MM suffixes).
-          Ideal for practising the most common on-air element.
+          Ideal for practising the most common on-air element. Callsign distribution is
+          configured in <a href="#settings-qso">Settings → QSO Simulations → Call Sign Settings</a>.
         </p>
         <ul>
           <li>TTS spells each callsign character by character.</li>
-          <li>Quick Game mode available for timed callsign recognition.</li>
+          <li>Tap <strong>Quick Game</strong> for a timed callsign recognition quiz (Correct / Wrong buttons).</li>
+          <li>Tap <strong>Pick Game</strong> for a multiple-choice identification game: hear a callsign in Morse and select the correct one from 3 – 4 options (see <a href="#pick-game">Callsign Pick Game</a>).</li>
         </ul>
         <h3>From File</h3>
         <p>
@@ -653,6 +667,14 @@
           (<a href="#settings-general">Settings → General</a>). Default: <code class="default">5 minutes</code>. Set to
           <em>Unlimited</em> to play the full article.
         </p>
+        <h3>QRM / QRN in Web Browsing</h3>
+        <p>
+          QRM and QRN apply to CW Web Browsing as well as all training modes. If you have
+          interference or atmospheric noise enabled in
+          <a href="#settings-audio">Settings → Audio</a>, it will be mixed into web
+          article playback — useful for practising real-content copy under realistic
+          band conditions.
+        </p>
       </div>
       <div class="screenshots">
         <div class="screenshot">
@@ -696,6 +718,20 @@
             <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
             <div class="game-stat">Pool: <span>Sentences up to selected word count</span></div>
           </div>
+          <div class="game-card" id="ham-game">
+            <div class="game-title">HAM Abbreviations Game</div>
+            <div class="game-stat">From: <span>Word Training → HAM Abbreviations</span></div>
+            <div class="game-stat">Timer: <span>6 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Standard CW abbreviations (QRM, RST, 73, …)</span></div>
+          </div>
+          <div class="game-card" id="pick-game">
+            <div class="game-title">Callsign Pick Game</div>
+            <div class="game-stat">From: <span>Word Training → Call Signs</span></div>
+            <div class="game-stat">Timer: <span>6 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Callsigns with Morse-confusable foils</span></div>
+          </div>
           <div class="game-card">
             <div class="game-title">QSO Quiz</div>
             <div class="game-stat">From: <span>Text &amp; QSO Training</span></div>
@@ -732,8 +768,9 @@
         </div>
         <h3>Speed Ladder</h3>
         <p>
-          Available in Character, Word, and Phrase games. Toggle with the <strong>⚡</strong>
-          icon in the top bar. Default: <code class="default">ON</code>.
+          Available in Character, Word, Phrase, HAM Abbreviations, and Callsign Pick games.
+          Toggle with the <strong>⚡</strong> icon in the top bar.
+          Default: <code class="default">ON</code>.
         </p>
         <ul>
           <li><strong>+0.2 WPM</strong> per correct answer</li>
@@ -750,7 +787,34 @@
       </div>
     </div>
 
-    <!-- Row 3: QSO quiz + scoring -->
+    <!-- Row 3: Callsign Pick Game -->
+    <div class="cols">
+      <div class="content">
+        <h3>How the Callsign Pick Game Works</h3>
+        <ol>
+          <li>A callsign plays in Morse. While audio is playing, 3 – 4 callsign options are visible on screen but not yet tappable.</li>
+          <li>When Morse finishes, the buttons activate and the 6-second timer starts.</li>
+          <li>Tap the callsign you heard. The foil options each differ from the correct callsign by exactly <em>one Morse-confusable character</em> (e.g. H↔S, 9↔0, K↔N).</li>
+          <li>After you answer — or the timer expires — the correct option flashes green, all wrong options flash red, and the next round begins after a short pause.</li>
+          <li>Three wrong answers ends the game.</li>
+        </ol>
+        <div class="note">
+          <strong>No TTS</strong> in the Callsign Pick Game — the Morse audio is the only cue, regardless of your TTS setting. The options are displayed visually only, so you must copy the callsign from sound.
+        </div>
+        <div class="tip">
+          The number of options (3 or 4) adapts to the available screen height. Rotate to landscape to get more options on compact phones.
+        </div>
+      </div>
+      <div class="screenshots">
+        <!-- img/pick-game.png -->
+        <div class="screenshot">
+          <div class="icon">🎯</div>
+          <div class="label">[screenshot: Pick Game — four callsign options]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: QSO quiz + scoring -->
     <div class="cols">
       <div class="content">
         <h3>How the QSO Quiz Works</h3>
@@ -793,7 +857,7 @@
 </main>
 
 <footer>
-  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.12.31
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.16.9
 </footer>
 
 <!-- Lightbox overlay -->
