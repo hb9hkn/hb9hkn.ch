@@ -11,7 +11,7 @@
 
 <header>
   <h1>CW Complete Trainer</h1>
-  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.16.9</div>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.17.8</div>
 </header>
 
 <nav>
@@ -192,7 +192,7 @@
     <h2><span class="num">3</span>Settings</h2>
 
     <p>
-      Open Settings from the launcher screen. Five sub-sections cover all configurable
+      Open Settings from the launcher screen. Six sub-sections cover all configurable
       parameters. All changes take effect immediately and are saved automatically.
       Read this section together with the feature descriptions below — the settings
       directly shape how every exercise sounds and behaves.
@@ -216,7 +216,7 @@
           <tr><td>Duration / Character count</td><td><code class="default">5 min</code></td><td>Minutes or character count used when a limit is set. Available values for Minutes: 1, 2, 3, 4, 5, 7, 10, 15, 20, 25, 30.</td></tr>
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Speed</div></td></tr>
           <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) have no upper cap regardless of this setting.</td></tr>
-          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Displays a live WPM slider on the player screen. When off, a tappable speed badge is shown instead (tap → Settings).</td></tr>
+          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Two options: <em>Show WPM slider on player screen</em> — a live slider appears on the player. <em>Adjust WPM in Settings only</em> — a tappable speed badge is shown instead (tap → Settings → General).</td></tr>
           <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
           <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Toggle the switch to enable, then set the target WPM.</td></tr>
           <tr><td>Wordsworth WPM</td><td><code class="default">off</code></td><td>Word gaps only are extended to the rate you would hear at this lower WPM — inter-character gaps stay at full speed. Useful for practising full-speed copy while giving yourself more time between words. Mutually exclusive with Farnsworth.</td></tr>
@@ -224,16 +224,14 @@
           <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
           <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
           <tr><td>Auto Speed — WPM step</td><td><code class="default">0.02</code></td><td>Fractional WPM added at each threshold crossing.</td></tr>
+          <tr><td>Auto Speed — Farnsworth WPM step</td><td><code class="default">0.01</code></td><td>Fractional Farnsworth WPM increase at each threshold crossing. Visible only when Farnsworth timing is enabled.</td></tr>
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Text Display</div></td></tr>
           <tr><td>Text display mode</td><td><code class="default">Progressive</code></td><td><em>Progressive</em>: characters revealed as Morse plays. <em>At text end</em>: full text shown after each exchange — use this to train pure copying without visual cues. <em>Full text at start</em>: all text shown immediately.</td></tr>
-          <tr><td>Font size</td><td><code class="default">M (16 pt)</code></td><td>Player text size. Options: S (13 pt), M (16 pt), L (20 pt), XL (26 pt).</td></tr>
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Transmission</div></td></tr>
           <tr><td>Start pause</td><td><code class="default">0 s</code></td><td>Silence inserted before the first Morse symbol. Useful to prepare before copying starts.</td></tr>
           <tr><td>Dash-to-dot ratio</td><td><code class="default">3.0</code></td><td>Duration of a dah relative to a dit. Standard Morse = 3.0. Increase for a more characteristic fist.</td></tr>
           <tr><td>Char spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the inter-character gap (normally 3 dits). Values above 1.0 add extra space between characters — helpful when learning new characters.</td></tr>
           <tr><td>Word spacing multiplier</td><td><code class="default">1.0</code></td><td>Scales the word gap (normally 7 dits). Values above 1.0 add extra pause between words.</td></tr>
-          <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Screen</div></td></tr>
-          <tr><td>Keep screen on</td><td><code class="default">off</code></td><td>Prevents the device screen from dimming or locking during playback.</td></tr>
         </tbody>
       </table>
     </div>
@@ -340,9 +338,9 @@
           <tr><td>Abbreviated numbers</td><td><code class="default">60%</code></td><td>In WPX exchanges, probability that each serial number is sent with 0 and 9 abbreviated to T and N (e.g. 090 → TNT, 001 → TT1). A single roll decides the whole number — either fully abbreviated or fully numeric. Set to 0% to always send full digits; 100% to always abbreviate eligible digits.</td></tr>
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Call Sign Settings</div></td></tr>
           <tr><td>Continent presets</td><td><code class="default">—</code></td><td>Three quick-select buttons: <strong>Europe</strong>, <strong>North America</strong>, and <strong>Asia</strong>. Tapping a preset sets all six continent sliders to that region's default distribution. Sliders can be adjusted individually afterward.</td></tr>
-          <tr><td>Continent distribution sliders</td><td><code class="default">NA 69% / EU 27% / others 1%</code></td><td>Six linked sliders (North America, Europe, Asia, South America, Oceania, Africa) always sum to 100%. Adjusting one slider redistributes the remainder proportionally across the others. Set a continent to 100% to practise exclusively with callsigns from that region.</td></tr>
-          <tr><td>Country prefix probability</td><td><code class="default">0%</code></td><td>Fraction of callsigns that include a country prefix (e.g. <code>FR/3B8G</code>). Range: 0 – 100%.</td></tr>
-          <tr><td>Portable suffix probability</td><td><code class="default">0%</code></td><td>Fraction of callsigns that include a portable suffix (e.g. <code>HB9HKN/P</code>, <code>/M</code>). Range: 0 – 100%. SOTA activators always carry a portable suffix regardless of this setting.</td></tr>
+          <tr><td>Continent distribution sliders</td><td><code class="default">NA 75% / SA 15% / EU 5% / AS 2% / OC 2% / AF 1%</code></td><td>Six linked sliders (North America, Europe, Asia, South America, Oceania, Africa) always sum to 100%. Adjusting one slider redistributes the remainder proportionally across the others. Set a continent to 100% to practise exclusively with callsigns from that region.</td></tr>
+          <tr><td>Country prefix probability</td><td><code class="default">2%</code></td><td>Fraction of callsigns that include a country prefix (e.g. <code>FR/3B8G</code>). Range: 0 – 100%.</td></tr>
+          <tr><td>Portable suffix probability</td><td><code class="default">5%</code></td><td>Fraction of callsigns that include a portable suffix (e.g. <code>HB9HKN/P</code>, <code>/M</code>). Range: 0 – 100%. SOTA activators always carry a portable suffix regardless of this setting.</td></tr>
         </tbody>
       </table>
     </div>
@@ -360,6 +358,19 @@
         </tbody>
       </table>
     </div>
+
+    <!-- 3.6 Subscription -->
+    <h3 id="settings-subscription">3.6 Subscription</h3>
+    <p>
+      Manage your monthly subscription. The screen shows your current status
+      (active, pending, or not subscribed) and the price in your local currency
+      as listed in the Play Store.
+    </p>
+    <ul>
+      <li><strong>Subscribe</strong> — opens the Google Play purchase flow. The button label shows the real price (e.g. "Subscribe — CHF 1.49 / month").</li>
+      <li><strong>Unsubscribe</strong> — shown when you have an active subscription; opens the Google Play cancellation screen.</li>
+    </ul>
+    <p>Cancel anytime via Google Play. Access is retained until the end of the current billing period.</p>
 
     <div class="note" style="margin-top: 24px;">
       All settings are saved to device storage automatically. They survive app restarts and
@@ -382,7 +393,14 @@
           by <em>LCWO.net</em>. You start with just two characters (K and M) and add one new
           character at a time as your confidence grows. All 40 CW characters are covered.
         </p>
-        <h3>Selecting Your Level</h3>
+        <h3>Training Mode</h3>
+        <p>Three mutually exclusive modes are available via the mode selector at the top of the screen:</p>
+        <ul>
+          <li><strong>Koch</strong> <code class="default">default</code> — classic progression through the first N characters of the LCWO order. Tap any chip to jump to that level. Default level: 2 (K, M). Level range: 2 – 40.</li>
+          <li><strong>Selected Characters</strong> — pick exactly which characters to practise by tapping individual chips. Useful for targeted drill on specific problem characters regardless of Koch order.</li>
+          <li><strong>Koch with Exclusions</strong> — Koch progression minus individually excluded characters. Advance through the Koch order while skipping characters you want to defer.</li>
+        </ul>
+        <h3>Selecting Your Level (Koch mode)</h3>
         <p>
           The character set panel shows all 40 characters as chips. Characters at or below
           your current level are unlocked (filled, tappable); the next character is highlighted;
@@ -391,8 +409,6 @@
         <ul>
           <li><strong>Tap any chip</strong> to jump directly to that level.</li>
           <li>The current level is saved and restored when you reopen the app.</li>
-          <li>Default level: <code class="default">2 (K, M)</code></li>
-          <li>Level range: 2 – 40</li>
         </ul>
       </div>
       <div class="screenshots">
@@ -526,14 +542,28 @@
           <li>Default max words: <code class="default">5 words</code></li>
           <li>Tap <strong>Quick Game</strong> for the <a href="#phrase-game">Phrase Error Spotter</a> game.</li>
         </ul>
+        <h3>My Stories</h3>
+        <p>
+          Save .txt files as named stories for repeated practice with resume support.
+          Long files are automatically split into segments (~5 000 characters each).
+        </p>
+        <ul>
+          <li>Tap a story title to open the segment list. Each segment shows its character count and how far you have progressed.</li>
+          <li>A <strong>Resume</strong> chip appears on segments you have partially played — playback restarts from where you left off.</li>
+          <li>Tap the delete icon to remove a story.</li>
+          <li>Add stories via <strong>From File</strong> below — choose <em>Save as Story</em> when prompted.</li>
+        </ul>
+
         <h3>From File</h3>
         <p>
-          Pick a <code>.txt</code> file from your Downloads folder. The file content is
-          played as <strong>continuous prose in its original order</strong> — ideal for
-          stories, news articles, or any text where sequence matters. Use
-          <a href="#word-training">Word Training → From File</a> if you want random
-          word-by-word practice from a list instead.
+          Tap <strong>Pick a .txt file</strong> to open a file from your Downloads folder.
+          A dialog then asks what to do with the file:
         </p>
+        <ul>
+          <li><strong>Play Directly</strong> — play immediately as continuous prose in original order.</li>
+          <li><strong>Save as Story</strong> — enter a title and save the file to <strong>My Stories</strong> for repeated use with per-segment resume tracking.</li>
+        </ul>
+        <p>Use <a href="#word-training">Word Training → From File</a> if you want random word-by-word practice from a list instead.</p>
       </div>
       <div class="screenshots">
         <div class="screenshot">
@@ -584,7 +614,8 @@
         <h3>QSO Games</h3>
         <ul>
           <li><strong>QSO Game</strong> — listen to a full QSO, then answer multiple-choice questions about what was exchanged</li>
-          <li><strong>SOTA/POTA Game</strong> — same format but with mixed SOTA and POTA activations</li>
+          <li><strong>SOTA Game</strong> — same format using a SOTA activation QSO</li>
+          <li><strong>POTA Game</strong> — same format using a POTA activation QSO</li>
           <li><strong>Contest Game</strong> — contest QSO quiz with questions about the exchanged data: serial numbers (WPX), state/province/power (ARRL DX), or name + member number/prefix/CWA (CWops CWT)</li>
         </ul>
         <p>See <a href="#quick-games">Quick Games</a> for full details on scoring and mechanics.</p>
@@ -734,10 +765,31 @@
           </div>
           <div class="game-card">
             <div class="game-title">QSO Quiz</div>
-            <div class="game-stat">From: <span>Text &amp; QSO Training</span></div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → QSO Game</span></div>
             <div class="game-stat">Timer: <span>15 s / question</span></div>
             <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
-            <div class="game-stat">Pool: <span>Generated QSO (standard / SOTA / POTA / Contest)</span></div>
+            <div class="game-stat">Pool: <span>Standard ragchew / training QSO</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">SOTA Game</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → SOTA Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>SOTA activation QSO with real summit references</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">POTA Game</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → POTA Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>POTA activation QSO with real park references</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">Contest Game</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → Contest Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>WPX / ARRL DX / CWops CWT (selected formats)</span></div>
           </div>
         </div>
       </div>
@@ -857,7 +909,7 @@
 </main>
 
 <footer>
-  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.16.9
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v0.17.8
 </footer>
 
 <!-- Lightbox overlay -->
