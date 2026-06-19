@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CW Complete Trainer — User Guide v1.0.0</title>
+  <title>CW Complete Trainer — User Guide v1.0.18</title>
 <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
 </head>
@@ -19,7 +19,7 @@
 
 <header>
   <h1>CW Complete Trainer</h1>
-  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v1.0.0</div>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v1.0.18</div>
   <div style="margin-top:16px;">
     <a href="https://play.google.com/store/apps/details?id=com.hb9hkn.cw_complete_trainer" target="_blank">
       <img src="img/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" height="52">
@@ -230,12 +230,12 @@
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Speed</div></td></tr>
           <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) are clamped at 60 WPM regardless of this setting.</td></tr>
           <tr><td>HCB (Head Copy Booster)</td><td><code class="default">on</code></td><td>When enabled, some exercises play at a higher speed first and then drop to a slower speed before the text is revealed, forcing you to copy without visual cues.</td></tr>
-          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Two options: <em>Show WPM slider on player screen</em> — a live slider appears on the player. <em>Adjust WPM in Settings only</em> — a tappable speed badge is shown instead (tap → Settings → General).</td></tr>
+          <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Two options: <em>Show WPM slider on player screen</em> — a live slider appears on the player. <em>Adjust WPM in Settings only</em> — a tappable speed badge is shown instead (tap → Settings → General). <strong>Mutually exclusive with Auto Speed Increase</strong> — enabling the slider disables auto-speed, and vice versa. Tapping a greyed-out option shows a message explaining what to change first.</td></tr>
           <tr><td>Speed (WPM)</td><td><code class="default">20</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
           <tr><td>Farnsworth WPM</td><td><code class="default">off</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Toggle the switch to enable, then set the target WPM.</td></tr>
           <tr><td>Wordsworth WPM</td><td><code class="default">off</code></td><td>Word gaps only are extended to the rate you would hear at this lower WPM — inter-character gaps stay at full speed. Useful for practising full-speed copy while giving yourself more time between words. Mutually exclusive with Farnsworth.</td></tr>
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Auto Speed</div></td></tr>
-          <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played, helping you progress without manual adjustment.</td></tr>
+          <tr><td>Auto Speed — Enable</td><td><code class="default">on</code></td><td>Automatically increases WPM after a set number of characters have been played. Character counts are <strong>cumulative across exercises and across app sessions</strong> — stopping an exercise early or closing the app does not reset progress toward the next step. WPM is shown as a decimal value while auto-speed is active (e.g. 20.04). Applies to all training modes including QSO Training, but not Quick Games. <strong>Mutually exclusive with Show WPM slider on player screen</strong> — enabling auto-speed hides the player slider, and vice versa.</td></tr>
           <tr><td>Auto Speed — Char threshold</td><td><code class="default">1000</code></td><td>Number of non-marker characters played between each automatic WPM increase. Range: 100 – 1,000,000.</td></tr>
           <tr><td>Auto Speed — WPM step</td><td><code class="default">0.02</code></td><td>Fractional WPM added at each threshold crossing.</td></tr>
           <tr><td>Auto Speed — Farnsworth WPM step</td><td><code class="default">0.01</code></td><td>Fractional Farnsworth WPM increase at each threshold crossing. Visible only when Farnsworth timing is enabled.</td></tr>
@@ -911,7 +911,7 @@
 </main>
 
 <footer>
-  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v1.0.0
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v1.0.18
 </footer>
 
 <!-- Lightbox overlay -->
