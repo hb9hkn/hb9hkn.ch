@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speak-a-Speed — Privacy Policy</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <style>
+    :root {
+      --text:    #1b1f2a;
+      --muted:   #5a6072;
+      --accent:  #1b4fd1;
+      --border:  #e3e6ee;
+      --card:    #f6f7fb;
+      --green:   #1a9e5c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #ffffff;
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    header {
+      text-align: center;
+      padding: 48px 20px 32px;
+    }
+    header img.logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 2px 14px rgba(27,79,209,0.18);
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    header .sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    p { margin-bottom: 10px; color: var(--text); }
+    ul { margin: 8px 0 12px 20px; }
+    li { margin-bottom: 8px; }
+    .updated {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .note {
+      background: var(--card);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: 0.95rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .summary-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .summary-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .summary-list li:last-child { border-bottom: none; }
+    .summary-list .yes { color: var(--green); font-weight: 600; }
+    code {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.88em;
+    }
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="img/logo.png" alt="Speak-a-Speed logo">
+  <h1>Speak-a-Speed</h1>
+  <div class="sub">Privacy Policy</div>
+</header>
+
+<main>
+
+  <p class="updated"><strong>Last updated:</strong> 12 July 2026 (app version 0.4.0)</p>
+
+  <section id="intro">
+    <div class="note">
+      Speak-a-Speed does <strong>not</strong> collect, store, or transmit any
+      personal data. There is no account, no server, and no analytics of any
+      kind. Your location and settings never leave your device.
+    </div>
+  </section>
+
+  <section id="permissions">
+    <h2>Permissions Used</h2>
+    <ul>
+      <li>
+        <strong>Location (Fine / Coarse / Background):</strong> used only to
+        calculate your current speed from GPS while the app is running. Your
+        location is processed entirely on your device to produce a speed
+        value and is never recorded, transmitted, or shared with anyone,
+        including us.
+      </li>
+      <li>
+        <strong>Foreground Service (incl. Location &amp; Media Playback
+        types):</strong> lets speed tracking and voice announcements
+        continue while your screen is off or another app is in front, as
+        required by Android for apps that track location in the background.
+        A persistent notification is shown while this is active, as Android
+        requires.
+      </li>
+      <li>
+        <strong>Notifications:</strong> used to display the required
+        foreground-service notification described above.
+      </li>
+      <li>
+        <strong>Phone State:</strong> used only to detect when a call starts
+        or ends, so announcements can be paused, continued, or muted
+        according to your "During calls" setting. No call data (numbers,
+        contacts, call history) is read, stored, or transmitted.
+      </li>
+      <li>
+        <strong>Wake Lock:</strong> used only to keep the screen on when you
+        enable "Keep screen on" in Settings, and to keep GPS tracking active
+        while announcements are running.
+      </li>
+      <li>
+        <strong>Receive Boot Completed:</strong> used only to resume speed
+        tracking automatically if the foreground service was active when
+        your device restarted. It does not run the app or collect data on
+        every boot otherwise.
+      </li>
+    </ul>
+  </section>
+
+  <section id="storage">
+    <h2>Data Storage</h2>
+    <p>
+      All settings (activity, units, voice, announcement thresholds, and
+      similar preferences) are stored locally on your device only, using
+      standard Android/iOS local storage. Nothing is synced to a cloud
+      service, because Speak-a-Speed has no backend server at all.
+    </p>
+  </section>
+
+  <section id="tts">
+    <h2>Voice Announcements (Text-to-Speech)</h2>
+    <p>
+      Speed is spoken aloud using your device's built-in text-to-speech
+      engine. Speak-a-Speed prefers voices that work fully offline. If you
+      manually select a voice in your device's system Text-to-Speech
+      settings that requires network access, speech synthesis for that
+      voice may involve your operating system's TTS provider (e.g. Google
+      Text-to-Speech) contacting the internet. That processing is performed
+      by your device's system TTS engine, not by Speak-a-Speed, and is
+      governed by that provider's own privacy policy — Speak-a-Speed itself
+      never transmits your speed or location data anywhere.
+    </p>
+  </section>
+
+  <section id="ads">
+    <h2>Advertising &amp; Monetisation</h2>
+    <p>
+      Speak-a-Speed does not currently display ads or require a
+      subscription. If this changes in a future version, this policy will
+      be updated first, and any such feature will be described here,
+      including what (if anything) it collects.
+    </p>
+  </section>
+
+  <section id="summary">
+    <h2>Summary</h2>
+    <div class="card">
+      <ul class="summary-list">
+        <li><span class="yes">✔</span> No personal data collected</li>
+        <li><span class="yes">✔</span> No account required</li>
+        <li><span class="yes">✔</span> No analytics or tracking, in-app or on this page</li>
+        <li><span class="yes">✔</span> No ads</li>
+        <li><span class="yes">✔</span> No server — everything is processed on your device</li>
+        <li><span class="yes">✔</span> Location and settings never leave your device</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="children">
+    <h2>Children's Privacy</h2>
+    <p>
+      Speak-a-Speed is not directed at children and does not knowingly
+      collect any data from anyone, regardless of age — because it does not
+      collect data from any user at all.
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2>Changes to This Policy</h2>
+    <p>
+      If this policy changes, the "Last updated" date above will be revised
+      accordingly. Please check back occasionally.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      For questions about this policy, contact:
+      <code>ms2070ca (AT) yahoo.com</code>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Speak-a-Speed &nbsp;·&nbsp; by HB9HKN
+</footer>
+
+</body>
+</html>
