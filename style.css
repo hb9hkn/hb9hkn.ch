@@ -330,6 +330,7 @@ a.toc-card {
   transition: border-color 0.15s, background 0.15s;
 }
 a.toc-card:hover { border-color: var(--accent); background: rgba(123,140,222,0.12); }
+a.toc-card .toc-num { margin-bottom: 8px; }
 a.toc-card .toc-line { color: var(--text); font-size: 0.92rem; line-height: 1.5; }
 a.toc-card .toc-line + .toc-line { margin-top: 6px; }
 
