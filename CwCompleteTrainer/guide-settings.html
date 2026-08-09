@@ -82,7 +82,7 @@
           <tr><td>Duration / Character count</td><td><code class="default">5 min</code></td><td>Minutes or character count used when a limit is set. Available values for Minutes: 1, 2, 3, 4, 5, 7, 10, 15, 20, 25, 30.</td></tr>
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Speed</div></td></tr>
           <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) are clamped at 60 WPM regardless of this setting.</td></tr>
-          <tr><td>HCB (Head Copy Booster)</td><td><code class="default">on</code></td><td>When enabled, some exercises play at a higher speed first and then drop to a slower speed before the text is revealed, forcing you to copy without visual cues.</td></tr>
+          <tr><td>HCB (Head Copy Booster)</td><td><code class="default">on</code></td><td>When enabled, some exercises play at a higher speed first and then drop to a slower speed before the text is revealed, forcing you to copy without visual cues. Applies to Word and Sentence training; not applicable to Character Training, QSO Training, Web Browsing, or story/file playback. Leave it on — together with TTS, it's the app's main mechanism for real Instant Character Recognition, see <a href="guide-philosophy.html">Philosophy</a>.</td></tr>
           <tr><td>Show WPM slider on player</td><td><code class="default">on</code></td><td>Two options: <em>Show WPM slider on player screen</em> — a live slider appears on the player. <em>Adjust WPM in Settings only</em> — a tappable speed badge is shown instead (tap → Settings → General). <strong>Mutually exclusive with Auto Speed Increase</strong> — enabling the slider disables auto-speed, and vice versa. Tapping a greyed-out option shows a message explaining what to change first.</td></tr>
           <tr><td>Speed (WPM)</td><td><code class="default">25</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms).</td></tr>
           <tr><td>Farnsworth WPM</td><td><code class="default">on (20)</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Toggle the switch to enable, then set the target WPM.</td></tr>
@@ -160,10 +160,14 @@
     <!-- 3.3 Text-to-Speech -->
     <h3 id="settings-tts">3.3 Text-to-Speech</h3>
     <p>
-      When TTS is enabled, the app speaks each training item aloud after its Morse audio
-      drains. This confirms what you heard and reinforces the association between sound and
-      meaning. TTS works in Character, Word, and Text training modes. It is especially
-      useful for beginners who want immediate feedback after each item.
+      When TTS is enabled, the app speaks each training item aloud only <em>after</em> its
+      Morse audio has played and its text has drained — never before, so there's no way to
+      read ahead. This confirms what you heard and reinforces the association between sound
+      and meaning. TTS works in Character Training, Word Training, and English Sentences
+      (within Text &amp; QSO Training) — it does not apply to My Stories/From File, QSO
+      Simulations, or CW Web Browsing, which share some of the same screens but not this
+      pipeline. Leave TTS on by default: it's the app's main mechanism, together with HCB, for
+      building real Instant Character Recognition — see <a href="guide-philosophy.html">Philosophy</a>.
     </p>
     <div class="table-wrap">
       <table>
