@@ -56,12 +56,15 @@ nav {
   background: var(--bg-deep);
   border-bottom: 1px solid var(--border);
   padding: 10px 40px;
+}
+nav .nav-row {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 4px;
   align-items: center;
   justify-content: center;
 }
+nav .nav-row + .nav-row { margin-top: 6px; }
 nav span { color: var(--muted); font-size: 0.8rem; margin-right: 4px; }
 nav a {
   font-size: 0.82rem;
@@ -74,6 +77,7 @@ nav a {
   transition: background 0.15s;
 }
 nav a:hover { background: var(--bg-card); color: var(--accent); }
+nav a.current { background: var(--bg-card); color: var(--accent); border-color: var(--accent); }
 
 /* ── Main layout ────────────────────────────────────── */
 main { max-width: 1200px; margin: 0 auto; padding: 40px 40px 80px; }
@@ -308,6 +312,26 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   margin-bottom: 3px;
 }
 .game-card .game-stat span { color: var(--text); }
+
+/* ── TOC grid ───────────────────────────────────────── */
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 16px 0 32px;
+}
+a.toc-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+a.toc-card:hover { border-color: var(--accent); background: rgba(123,140,222,0.12); }
+a.toc-card .toc-title { color: var(--accent); font-weight: 600; font-size: 0.98rem; margin-bottom: 4px; }
+a.toc-card .toc-desc { color: var(--muted); font-size: 0.85rem; }
 
 /* ── Footer ─────────────────────────────────────────── */
 footer {

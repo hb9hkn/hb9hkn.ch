@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8JZFPDCMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L8JZFPDCMV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CW Web Browsing — CW Complete Trainer User Guide v2.0.2</title>
+<link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
+</head>
+<body>
+
+<header>
+  <h1>CW Complete Trainer</h1>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2</div>
+  <div style="margin-top:16px;">
+    <a href="https://play.google.com/store/apps/details?id=com.hb9hkn.cw_complete_trainer" target="_blank">
+      <img src="img/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" height="52">
+    </a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-row">
+    <span>Guide:</span>
+    <a href="user-guide.html">Contents</a>
+    <a href="guide-philosophy.html">Philosophy</a>
+    <a href="guide-getting-started.html">Getting Started</a>
+    <a href="guide-learn-characters.html">Learn Characters</a>
+    <a href="guide-learn-words.html">Learn Words</a>
+    <a href="guide-learn-sentences.html">Learn Sentences</a>
+    <a href="guide-qso-practice.html">QSO Practice</a>
+    <a href="guide-read-a-book.html">Read a Book</a>
+    <a href="guide-listen-to-web.html">Listen to Web</a>
+    <a href="guide-play-games.html">Play Games</a>
+  </div>
+  <div class="nav-row">
+    <span>Reference:</span>
+    <a href="guide-settings.html">Settings</a>
+    <a href="guide-character-training.html">Character Training</a>
+    <a href="guide-word-training.html">Word Training</a>
+    <a href="guide-text-qso-training.html">Text &amp; QSO Training</a>
+    <a href="guide-web-browsing.html" class="current">CW Web Browsing</a>
+    <a href="guide-quick-games.html">Quick Games</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="web-browsing">
+    <h2><span class="num">14</span>CW Web Browsing</h2>
+
+    <!-- Row 1: browser -->
+    <div class="cols">
+      <div class="content">
+        <p>
+          Convert any online article to Morse audio in seconds — useful for practising with
+          real-world content at your target speed.
+        </p>
+        <h3>Using the Browser</h3>
+        <ol>
+          <li>Tap <strong>CW Web Browsing</strong> from the launcher — the built-in browser opens immediately.</li>
+          <li>Navigate to any page using the URL bar at the top.</li>
+          <li>Tap the <strong>Convert</strong> floating button (bottom-right) to extract the
+              current page and start Morse playback.</li>
+        </ol>
+        <div class="tip">
+          The URL that loads when you open the browser is configurable in
+          <a href="guide-settings.html#settings-browser">Settings → Browser Settings</a>. Default: <code class="default">https://arrl.org</code>
+        </div>
+        <h3>Choosing the Right Page</h3>
+        <p>
+          Text extraction quality depends on how the website encodes its content. A few
+          practical guidelines:
+        </p>
+        <ul>
+          <li><strong>Best:</strong> individual news articles, blog posts, Wikipedia articles — pages
+              whose primary purpose is to present a body of text.</li>
+          <li><strong>Poor:</strong> home pages, category pages, search results — pages that are mostly
+              navigation links rather than readable text. The extractor may produce garbled output or
+              very little text at all.</li>
+          <li><strong>Varies:</strong> some publishers use heavy JavaScript rendering or aggressive
+              paywall encoding; the extractor works on the page source it receives and cannot always
+              recover the readable article from these sites.</li>
+        </ul>
+        <div class="tip">
+          When in doubt, navigate into a specific article rather than starting from a news site's
+          front page. <em>arrl.org/news</em>, for example, links to individual articles that extract
+          cleanly, whereas the front page itself contains mostly headlines and menus.
+        </div>
+        <h3>Basic Characters Only</h3>
+        <p>
+          When enabled <code class="default">on by default</code>, the text is filtered to
+          letters, digits, spaces, periods, commas, and hyphens before encoding. This
+          removes symbols, emoji, and special characters that don't have Morse equivalents.
+          Disable in Settings → Browser Settings if you want full character coverage.
+        </p>
+        <h3>Exercise Length</h3>
+        <p>
+          Long articles are automatically truncated according to your exercise length setting
+          (<a href="guide-settings.html#settings-general">Settings → General</a>). Default: <code class="default">5 minutes</code>. Set to
+          <em>Unlimited</em> to play the full article.
+        </p>
+        <h3>QRM / QRN in Web Browsing</h3>
+        <p>
+          QRM and QRN apply to CW Web Browsing as well as all training modes. If you have
+          interference or atmospheric noise enabled in
+          <a href="guide-settings.html#settings-audio">Settings → Audio</a>, it will be mixed into web
+          article playback — useful for practising real-content copy under realistic
+          band conditions.
+        </p>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/Play_web_site.png" alt="Browser with Convert button">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2
+</footer>
+
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('img.screenshot').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+</script>
+
+</body>
+</html>

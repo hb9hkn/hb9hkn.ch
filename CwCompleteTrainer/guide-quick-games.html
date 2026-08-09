@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8JZFPDCMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L8JZFPDCMV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Games — CW Complete Trainer User Guide v2.0.2</title>
+<link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
+</head>
+<body>
+
+<header>
+  <h1>CW Complete Trainer</h1>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2</div>
+  <div style="margin-top:16px;">
+    <a href="https://play.google.com/store/apps/details?id=com.hb9hkn.cw_complete_trainer" target="_blank">
+      <img src="img/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" height="52">
+    </a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-row">
+    <span>Guide:</span>
+    <a href="user-guide.html">Contents</a>
+    <a href="guide-philosophy.html">Philosophy</a>
+    <a href="guide-getting-started.html">Getting Started</a>
+    <a href="guide-learn-characters.html">Learn Characters</a>
+    <a href="guide-learn-words.html">Learn Words</a>
+    <a href="guide-learn-sentences.html">Learn Sentences</a>
+    <a href="guide-qso-practice.html">QSO Practice</a>
+    <a href="guide-read-a-book.html">Read a Book</a>
+    <a href="guide-listen-to-web.html">Listen to Web</a>
+    <a href="guide-play-games.html">Play Games</a>
+  </div>
+  <div class="nav-row">
+    <span>Reference:</span>
+    <a href="guide-settings.html">Settings</a>
+    <a href="guide-character-training.html">Character Training</a>
+    <a href="guide-word-training.html">Word Training</a>
+    <a href="guide-text-qso-training.html">Text &amp; QSO Training</a>
+    <a href="guide-web-browsing.html">CW Web Browsing</a>
+    <a href="guide-quick-games.html" class="current">Quick Games</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="quick-games">
+    <h2><span class="num">15</span>Quick Games</h2>
+
+    <!-- Row 1: overview + game cards -->
+    <div class="cols">
+      <div class="content">
+        <p>
+          Every training mode has a <strong>Quick Game</strong> button that launches a timed
+          listening quiz. Games are designed for short, focused sessions of 5 – 10 minutes.
+        </p>
+        <div class="game-grid">
+          <div class="game-card" id="char-game">
+            <div class="game-title">Character Match</div>
+            <div class="game-stat">From: <span>Character Training</span></div>
+            <div class="game-stat">Timer: <span>4 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Characters at current Koch level</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">Word / Callsign Match</div>
+            <div class="game-stat">From: <span>Word Training</span></div>
+            <div class="game-stat">Timer: <span>6 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Words (filtered by length) or callsigns</span></div>
+          </div>
+          <div class="game-card" id="phrase-game">
+            <div class="game-title">Phrase Error Spotter</div>
+            <div class="game-stat">From: <span>Text Training</span></div>
+            <div class="game-stat">Timer: <span>10 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Sentences up to selected word count</span></div>
+          </div>
+          <div class="game-card" id="ham-game">
+            <div class="game-title">HAM Abbreviations Game</div>
+            <div class="game-stat">From: <span>Word Training → HAM Abbreviations</span></div>
+            <div class="game-stat">Timer: <span>6 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Standard CW abbreviations (QRM, RST, 73, …)</span></div>
+          </div>
+          <div class="game-card" id="pick-game">
+            <div class="game-title">Callsign Pick Game</div>
+            <div class="game-stat">From: <span>Word Training → Call Signs</span></div>
+            <div class="game-stat">Timer: <span>6 seconds</span></div>
+            <div class="game-stat">Lives: <span>3 wrong = game over</span></div>
+            <div class="game-stat">Pool: <span>Callsigns with Morse-confusable foils</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">QSO Quiz</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → QSO Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>Standard ragchew / training QSO</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">SOTA Game</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → SOTA Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>SOTA activation QSO with real summit references</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">POTA Game</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → POTA Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>POTA activation QSO with real park references</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">Contest Game</div>
+            <div class="game-stat">From: <span>Text &amp; QSO Training → Contest Game</span></div>
+            <div class="game-stat">Timer: <span>15 s / question</span></div>
+            <div class="game-stat">Questions: <span>4 – 10 per QSO</span></div>
+            <div class="game-stat">Pool: <span>WPX / ARRL DX / CWops CWT (selected formats)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/Word_Game.jpg" alt="Word Game Screen">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: how games work + speed ladder -->
+    <div class="cols">
+      <div class="content">
+        <h3>How Character / Word / Phrase Games Work</h3>
+        <ol>
+          <li>A character, word, or sentence plays in Morse.</li>
+          <li>The screen shows either the <em>same</em> item or a different one (foil).</li>
+          <li>Tap <strong>✓ Correct</strong> or <strong>✗ Wrong</strong> — or wait for the
+              timer to expire (counts as wrong).</li>
+          <li>Feedback flashes green or red for 1 – 3 seconds, then the next item plays.</li>
+          <li>Three wrong answers ends the game.</li>
+        </ol>
+        <div class="note">
+          For the <strong>Phrase Error Spotter</strong>, the audio <em>always</em> plays the
+          correct sentence. The text on screen may show a version with one word secretly
+          replaced. Your task is to judge whether what you <em>hear</em> matches what you
+          <em>see</em>.
+        </div>
+        <h3>Speed Ladder</h3>
+        <p>
+          Available in Character, Word, Phrase, HAM Abbreviations, and Callsign Pick games.
+          Toggle with the <strong>⚡</strong> icon in the top bar.
+          Default: <code class="default">ON</code>.
+        </p>
+        <ul>
+          <li><strong>+0.2 WPM</strong> per correct answer</li>
+          <li><strong>−0.1 WPM</strong> per wrong answer</li>
+          <li>WPM clamped between 5 and 60</li>
+          <li>Resets to your settings WPM when toggled on or when a new game starts</li>
+        </ul>
+        <p>When Speed Ladder is active the score strip shows your current ladder speed (⚡ N.N WPM) instead of the best-streak counter.</p>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/Game_example.png" alt="Game Over Screen with Score Chart">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Callsign Pick Game -->
+    <div class="cols">
+      <div class="content">
+        <h3>How the Callsign Pick Game Works</h3>
+        <ol>
+          <li>A callsign plays in Morse. While audio is playing, 3 – 4 callsign options are visible on screen but not yet tappable.</li>
+          <li>When Morse finishes, the buttons activate and the 6-second timer starts.</li>
+          <li>Tap the callsign you heard. The foil options each differ from the correct callsign by exactly <em>one Morse-confusable character</em> (e.g. H↔S, 9↔0, K↔N).</li>
+          <li>After you answer — or the timer expires — the correct option flashes green, all wrong options flash red, and the next round begins after a short pause.</li>
+          <li>Three wrong answers ends the game.</li>
+        </ol>
+        <div class="note">
+          <strong>No TTS</strong> in the Callsign Pick Game — the Morse audio is the only cue, regardless of your TTS setting. The options are displayed visually only, so you must copy the callsign from sound.
+        </div>
+        <div class="tip">
+          The number of options (3 or 4) adapts to the available screen height. Rotate to landscape to get more options on compact phones.
+        </div>
+      </div>
+      <div class="screenshots">
+        <!-- img/pick-game.png -->
+        <div class="screenshot">
+          <div class="icon">🎯</div>
+          <div class="label">[screenshot: Pick Game — four callsign options]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: QSO quiz + scoring -->
+    <div class="cols">
+      <div class="content">
+        <h3>How the QSO Quiz Works</h3>
+        <ol>
+          <li><strong>Listening phase:</strong> a complete two-operator QSO plays. Scroll
+              through the transcript as it is revealed line by line.</li>
+          <li><strong>Quiz phase:</strong> 4 – 10 multiple-choice questions are asked about
+              facts from the QSO (callsigns, RST reports, name, QTH, etc.).</li>
+          <li>Each question has a 15-second timer. Answer before it runs out.</li>
+          <li><strong>Review phase:</strong> your score, per-question breakdown, and the full
+              QSO transcript are shown.</li>
+        </ol>
+        <p>The QSO Quiz adapts its WPM during the session: +0.5 WPM if accuracy &gt; 75%,
+        −0.5 WPM if accuracy &lt; 50%, clamped between 5 and 40 WPM
+        (up to 80 WPM when <strong>High Speed Training</strong> is enabled in Settings → General).</p>
+        <h3>Scoring</h3>
+        <div class="card">
+          <p style="font-family: monospace; font-size: 0.95rem; color: var(--accent);">
+            score = correct × 100 × (wpm / 20) × (1 + timeRemaining × 0.5)
+          </p>
+          <p style="margin-top: 8px; font-size: 0.88rem; color: var(--muted);">
+            <em>timeRemaining</em> = fraction of the timer left when you answered (0.0 – 1.0).<br>
+            Faster answers and higher WPM produce higher scores.
+          </p>
+        </div>
+        <h3>Score History</h3>
+        <p>
+          Your last 50 games per game type are stored. A chart and your last 5 games are
+          shown on the game-over screen. Access the full history from the game-over screen.
+        </p>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/QSO_Game.jpg" alt="QSO Game Screen">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2
+</footer>
+
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('img.screenshot').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+</script>
+
+</body>
+</html>

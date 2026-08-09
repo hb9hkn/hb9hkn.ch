@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8JZFPDCMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L8JZFPDCMV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Training — CW Complete Trainer User Guide v2.0.2</title>
+<link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
+</head>
+<body>
+
+<header>
+  <h1>CW Complete Trainer</h1>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2</div>
+  <div style="margin-top:16px;">
+    <a href="https://play.google.com/store/apps/details?id=com.hb9hkn.cw_complete_trainer" target="_blank">
+      <img src="img/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" height="52">
+    </a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-row">
+    <span>Guide:</span>
+    <a href="user-guide.html">Contents</a>
+    <a href="guide-philosophy.html">Philosophy</a>
+    <a href="guide-getting-started.html">Getting Started</a>
+    <a href="guide-learn-characters.html">Learn Characters</a>
+    <a href="guide-learn-words.html">Learn Words</a>
+    <a href="guide-learn-sentences.html">Learn Sentences</a>
+    <a href="guide-qso-practice.html">QSO Practice</a>
+    <a href="guide-read-a-book.html">Read a Book</a>
+    <a href="guide-listen-to-web.html">Listen to Web</a>
+    <a href="guide-play-games.html">Play Games</a>
+  </div>
+  <div class="nav-row">
+    <span>Reference:</span>
+    <a href="guide-settings.html">Settings</a>
+    <a href="guide-character-training.html" class="current">Character Training</a>
+    <a href="guide-word-training.html">Word Training</a>
+    <a href="guide-text-qso-training.html">Text &amp; QSO Training</a>
+    <a href="guide-web-browsing.html">CW Web Browsing</a>
+    <a href="guide-quick-games.html">Quick Games</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="character-training">
+    <h2><span class="num">11</span>Character Training</h2>
+
+    <!-- Row 1: overview + full screen -->
+    <div class="cols">
+      <div class="content">
+        <p>
+          Character Training uses the <strong>Koch method</strong> — the same ordering used
+          by <em>LCWO.net</em>. You start with just two characters (K and M) and add one new
+          character at a time as your confidence grows. All 40 CW characters are covered.
+        </p>
+        <h3>Training Mode</h3>
+        <p>Three mutually exclusive modes are available via the mode selector at the top of the screen:</p>
+        <ul>
+          <li><strong>Koch</strong> <code class="default">default</code> — classic progression through the first N characters of the LCWO order. Tap any chip to jump to that level. Default level: 2 (K, M). Level range: 2 – 40.</li>
+          <li><strong>Selected Characters</strong> — pick exactly which characters to practise by tapping individual chips. Useful for targeted drill on specific problem characters regardless of Koch order.</li>
+          <li><strong>Koch with Exclusions</strong> — Koch progression minus individually excluded characters. Advance through the Koch order while skipping characters you want to defer.</li>
+        </ul>
+        <h3>Selecting Your Level (Koch mode)</h3>
+        <p>
+          The character set panel shows all 40 characters as chips. Characters at or below
+          your current level are unlocked (filled, tappable); the next character is highlighted;
+          characters above your level are greyed out.
+        </p>
+        <ul>
+          <li><strong>Tap any chip</strong> to jump directly to that level.</li>
+          <li>The current level is saved and restored when you reopen the app.</li>
+        </ul>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/Koch.jpg" alt="Koch Level Setting">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: playing + TTS + game -->
+    <div class="cols">
+      <div class="content">
+        <h3>Playing an Exercise</h3>
+        <p>
+          Tap <strong>Play</strong> to generate a fresh exercise: 50 groups of 5 randomly
+          chosen characters from your current level, transmitted at your configured speed.
+          A VVV opening and --- closing marker are added automatically.
+        </p>
+        <div class="note">
+          The recommended approach: stay at a level until you can copy at least 90% of
+          characters comfortably, then tap the next chip to advance.
+        </div>
+        <h3>Text-to-Speech (TTS)</h3>
+        <p>
+          When TTS is enabled (<a href="guide-settings.html#settings-tts">Settings → Text-to-Speech</a>), each character is
+          <em>spoken aloud</em> after its Morse plays, giving you immediate confirmation.
+          Two modes are available:
+        </p>
+        <ul>
+          <li><strong>Normal</strong> <code class="default">default</code> — letter name spoken naturally ("Kay", "Mike", …)</li>
+          <li><strong>NATO/ICAO</strong> — phonetic alphabet ("Kilo", "Mike", "Romeo", …)</li>
+        </ul>
+        <h3>Quick Game</h3>
+        <p>
+          Tap <strong>Quick Game</strong> to enter the <a href="guide-quick-games.html#char-game">Character Match</a>
+          game — a timed single-character recognition quiz using your current Koch level.
+        </p>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/TTS.jpg" alt="TTS Controls">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2
+</footer>
+
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('img.screenshot').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+</script>
+
+</body>
+</html>

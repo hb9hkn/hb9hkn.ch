@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8JZFPDCMV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L8JZFPDCMV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Training — CW Complete Trainer User Guide v2.0.2</title>
+<link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
+</head>
+<body>
+
+<header>
+  <h1>CW Complete Trainer</h1>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2</div>
+  <div style="margin-top:16px;">
+    <a href="https://play.google.com/store/apps/details?id=com.hb9hkn.cw_complete_trainer" target="_blank">
+      <img src="img/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" height="52">
+    </a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-row">
+    <span>Guide:</span>
+    <a href="user-guide.html">Contents</a>
+    <a href="guide-philosophy.html">Philosophy</a>
+    <a href="guide-getting-started.html">Getting Started</a>
+    <a href="guide-learn-characters.html">Learn Characters</a>
+    <a href="guide-learn-words.html">Learn Words</a>
+    <a href="guide-learn-sentences.html">Learn Sentences</a>
+    <a href="guide-qso-practice.html">QSO Practice</a>
+    <a href="guide-read-a-book.html">Read a Book</a>
+    <a href="guide-listen-to-web.html">Listen to Web</a>
+    <a href="guide-play-games.html">Play Games</a>
+  </div>
+  <div class="nav-row">
+    <span>Reference:</span>
+    <a href="guide-settings.html">Settings</a>
+    <a href="guide-character-training.html">Character Training</a>
+    <a href="guide-word-training.html" class="current">Word Training</a>
+    <a href="guide-text-qso-training.html">Text &amp; QSO Training</a>
+    <a href="guide-web-browsing.html">CW Web Browsing</a>
+    <a href="guide-quick-games.html">Quick Games</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="word-training">
+    <h2><span class="num">12</span>Word Training</h2>
+
+    <!-- Row 1: common words -->
+    <div class="cols">
+      <div class="content">
+        <h3>Common Words</h3>
+        <p>
+          Use the slider to set the maximum word length (3 – 13 characters). The app loads
+          all English words up to that length, shuffles them, and plays each word N times
+          before moving on.
+        </p>
+        <ul>
+          <li>Default max length: <code class="default">5 characters</code></li>
+          <li>Default repeat count: <code class="default">1×</code> (set directly on the Word Training screen: 1×, 2×, or 3×)</li>
+          <li>Words are reshuffled each time you tap Play.</li>
+        </ul>
+        <p>Tap <strong>Play</strong> to start, or <strong>Quick Game</strong> for a timed word-recognition quiz.</p>
+      </div>
+      <div class="screenshots">
+        <div class="screenshot">
+    <img class="screenshot" src="img/Word_Training.jpg" alt="Word Training Screen">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: abbreviations + callsigns + file -->
+    <div class="cols">
+      <div class="content">
+        <h3>HAM Abbreviations</h3>
+        <p>
+          A curated list of standard CW abbreviations used on the air: QRM, QRN, QSO, CQ,
+          DE, 73, 88, RST reports, and more.
+        </p>
+        <ul>
+          <li>TTS spells each abbreviation letter by letter (e.g., "Q – R – M").</li>
+          <li>Repeat count setting applies here too.</li>
+          <li>Tap <strong>Quick Game</strong> for a timed abbreviation recognition quiz (see <a href="guide-quick-games.html#ham-game">HAM Abbreviations Game</a>).</li>
+        </ul>
+        <h3>Call Signs</h3>
+        <p>
+          Bundled callsign lists, normalised and validated (no portable /AM, /MM suffixes).
+          Ideal for practising the most common on-air element. Callsign distribution is
+          configured in <a href="guide-settings.html#settings-qso">Settings → QSO Simulations → Call Sign Settings</a>.
+        </p>
+        <ul>
+          <li>TTS spells each callsign character by character.</li>
+          <li>Tap <strong>Quick Game</strong> for a timed callsign recognition quiz (Correct / Wrong buttons).</li>
+          <li>Tap <strong>Pick Game</strong> for a multiple-choice identification game: hear a callsign in Morse and select the correct one from 3 – 4 options (see <a href="guide-quick-games.html#pick-game">Callsign Pick Game</a>).</li>
+        </ul>
+        <h3>From File</h3>
+        <p>
+          Tap the <strong>file upload button</strong> to pick a <code>.txt</code> file from
+          your device's Downloads folder. Words are picked in <strong>random order</strong>
+          — this mode is intended for custom vocabulary lists, not continuous reading.
+        </p>
+        <div class="tip">
+          If you want to play a text file in its original sequence (e.g. a story or article),
+          use <strong>From File</strong> under
+          <a href="guide-text-qso-training.html">Text &amp; QSO Training</a> instead — that mode preserves
+          the original order and treats the file as continuous prose.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.0.2
+</footer>
+
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('img.screenshot').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+</script>
+
+</body>
+</html>
