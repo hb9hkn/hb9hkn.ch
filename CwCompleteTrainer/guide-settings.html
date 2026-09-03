@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings — CW Complete Trainer User Guide v2.1.2</title>
+  <title>Settings — CW Complete Trainer User Guide v3.0.35</title>
 <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/png" href="img/web_cw_icon512x512.png">
 </head>
@@ -19,7 +19,7 @@
 
 <header>
   <h1>CW Complete Trainer</h1>
-  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.1.2</div>
+  <div class="sub">USER GUIDE &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v3.0.35</div>
   <div style="margin-top:16px;">
     <a href="https://play.google.com/store/apps/details?id=com.hb9hkn.cw_complete_trainer" target="_blank">
       <img src="img/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" height="52">
@@ -83,6 +83,7 @@
           <tr><td colspan="3" style="padding: 0;"><div style="padding: 10px 12px 4px; color: var(--accent); font-weight: 600; font-size: 0.9rem; background: var(--bg-deep);">Speed</div></td></tr>
           <tr><td>High Speed Training</td><td><code class="default">off</code></td><td>Unlocks the WPM ceiling from 40 to 80 for all training sliders and auto-speed. Enable when practising high-speed copy. Quick-game speed ladders (Character, Word, Phrase) are clamped at 60 WPM regardless of this setting.</td></tr>
           <tr><td>HCB (Head Copy Booster)</td><td><code class="default">on</code></td><td>When enabled, some exercises play at a higher speed first and then drop to a slower speed before the text is revealed, forcing you to copy without visual cues. Applies to Word and Sentence training; not applicable to Character Training, QSO Training, Web Browsing, or story/file playback. Leave it on — together with TTS, it's the app's main mechanism for real Instant Character Recognition, see <a href="guide-philosophy.html">Philosophy</a>.</td></tr>
+          <tr><td>Head-Copy Mode</td><td><code class="default">on</code></td><td>Not to be confused with HCB above — this is a separate, screen-blanking feature. About 1 second after playback starts, the screen goes dark and the device is allowed to sleep, so you copy entirely by ear instead of reading along. Applies to the Player screen, TTS/QSO training, Web Browsing, and story/file reading; Quick Games are exempt. Turning this on also force-enables TTS, since Head-Copy Mode is meant to be used together with spoken confirmation.</td></tr>
           <tr><td>Speed (WPM)</td><td><code class="default">25</code></td><td>Character transmission speed using the PARIS standard (1 dit = 1200 / WPM ms). As of v2.0.3, speed is always adjusted here — the player screen no longer has its own WPM slider; a tappable speed badge is shown instead (tap → Settings → General).</td></tr>
           <tr><td>Farnsworth WPM</td><td><code class="default">on (20)</code></td><td>Characters play at full speed but inter-character and word gaps are stretched to achieve this lower overall rate. Useful for beginners who can hear individual characters but need more time between them. Must be lower than WPM. Toggle the switch to enable, then set the target WPM.</td></tr>
           <tr><td>Wordsworth WPM</td><td><code class="default">off</code></td><td>Word gaps only are extended to the rate you would hear at this lower WPM — inter-character gaps stay at full speed. Useful for practising full-speed copy while giving yourself more time between words. Mutually exclusive with Farnsworth.</td></tr>
@@ -177,8 +178,10 @@
           <tr><td>Enable TTS</td><td><code class="default">on</code></td><td>Master switch. When on, training modes use the Morse → pause → speak cycle instead of direct playback.</td></tr>
           <tr><td>Pronunciation mode</td><td><code class="default">Normal</code></td><td><em>Normal</em>: letter names and natural speech ("Kay", "the cat sat"). <em>NATO/ICAO</em>: phonetic alphabet for individual characters ("Kilo", "Tango").</td></tr>
           <tr><td>TTS volume</td><td><code class="default">1.0</code></td><td>Volume of the spoken output relative to the system TTS engine level.</td></tr>
-          <tr><td>Pre-delay</td><td><code class="default">500 ms</code></td><td>Silence between the end of Morse audio and the start of speech. Gives you time to recall the character before the answer is spoken.</td></tr>
-          <tr><td>Post-delay</td><td><code class="default">500 ms</code></td><td>Silence after speech, before the next item begins.</td></tr>
+          <tr><td>Pre-delay</td><td><code class="default">500 ms</code></td><td>Silence between the end of Morse audio and the start of speech. Gives you time to recall the character before the answer is spoken. Range: 0 – 3000 ms.</td></tr>
+          <tr><td>Post-delay</td><td><code class="default">500 ms</code></td><td>Silence after speech, before the next item begins. Range: 0 – 2000 ms.</td></tr>
+          <tr><td>TTS Speech Rate</td><td><code class="default">-5</code></td><td>How fast items are spoken, on a ±15-step slider. Applies app-wide: Character/Word/Sentence Training and all three Quick Games.</td></tr>
+          <tr><td>Character TTS Break</td><td><code class="default">0 ms</code></td><td>Pause inserted between individually spelled-out characters when TTS speaks a callsign or HAM abbreviation letter by letter. Range: 0 – 2000 ms.</td></tr>
         </tbody>
       </table>
     </div>
@@ -241,7 +244,7 @@
 </main>
 
 <footer>
-  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v2.1.2
+  CW Complete Trainer &nbsp;·&nbsp; by HB9HKN &nbsp;·&nbsp; v3.0.35
 </footer>
 
 </body>
